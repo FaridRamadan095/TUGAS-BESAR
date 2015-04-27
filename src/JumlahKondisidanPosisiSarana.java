@@ -1,25 +1,24 @@
-
 public class JumlahKondisidanPosisiSarana {
 	private int jumlahStopkontak;
-	private String kondisiStopKontak;
-	private String posisiStopKontak;
+	private int kondisiStopKontak;
+	private int posisiStopKontak;
 	private int jumlahKabelLcd;
-	private String kondisiKabelLcd;
-	private String posisiKabelLcd;
+	private int kondisiKabelLcd;
+	private int posisiKabelLcd;
 	private int jumlahLampu;
-	private String kondisiLampu;
-	private String posisiLampu;
+	private int kondisiLampu;
+	private int posisiLampu;
 	private int jumlahKipasAngin;
-	private String kondisiKipasAngin;
-	private String posisiKipasAngin;
+	private int kondisiKipasAngin;
+	private int posisiKipasAngin;
 	private int jumlahAc;
-	private String kondisiAc;
-	private String posisiAc;
+	private int kondisiAc;
+	private int posisiAc;
 	private int SSID;
-	private String inputBandwidth;
+	private int inputBandwidth;
 	private int jumlahCctv;
-	private String kondisiCctv;
-	private String posisiCctv;
+	private int kondisiCctv;
+	private int posisiCctv;
 	
 	public int getJumlahStopkontak() {
 		return jumlahStopkontak;
@@ -27,16 +26,16 @@ public class JumlahKondisidanPosisiSarana {
 	public void setJumlahStopkontak(int jumlahStopkontak) {
 		this.jumlahStopkontak = jumlahStopkontak;
 	}
-	public String getKondisiStopKontak() {
+	public int getKondisiStopKontak() {
 		return kondisiStopKontak;
 	}
-	public void setKondisiStopKontak(String kondisiStopKontak) {
+	public void setKondisiStopKontak(int kondisiStopKontak) {
 		this.kondisiStopKontak = kondisiStopKontak;
 	}
-	public String getPosisiStopKontak() {
+	public int getPosisiStopKontak() {
 		return posisiStopKontak;
 	}
-	public void setPosisiStopKontak(String posisiStopKontak) {
+	public void setPosisiStopKontak(int posisiStopKontak) {
 		this.posisiStopKontak = posisiStopKontak;
 	}
 	public int getJumlahKabelLcd() {
@@ -45,16 +44,16 @@ public class JumlahKondisidanPosisiSarana {
 	public void setJumlahKabelLcd(int jumlahKabelLcd) {
 		this.jumlahKabelLcd = jumlahKabelLcd;
 	}
-	public String getKondisiKabelLcd() {
+	public int getKondisiKabelLcd() {
 		return kondisiKabelLcd;
 	}
-	public void setKondisiKabelLcd(String kondisiKabelLcd) {
+	public void setKondisiKabelLcd(int kondisiKabelLcd) {
 		this.kondisiKabelLcd = kondisiKabelLcd;
 	}
-	public String getPosisiKabelLcd() {
+	public int getPosisiKabelLcd() {
 		return posisiKabelLcd;
 	}
-	public void setPosisiKabelLcd(String posisiKabelLcd) {
+	public void setPosisiKabelLcd(int posisiKabelLcd) {
 		this.posisiKabelLcd = posisiKabelLcd;
 	}
 	public int getJumlahLampu() {
@@ -63,16 +62,16 @@ public class JumlahKondisidanPosisiSarana {
 	public void setJumlahLampu(int jumlahLampu) {
 		this.jumlahLampu = jumlahLampu;
 	}
-	public String getKondisiLampu() {
+	public int getKondisiLampu() {
 		return kondisiLampu;
 	}
-	public void setKondisiLampu(String kondisiLampu) {
+	public void setKondisiLampu(int kondisiLampu) {
 		this.kondisiLampu = kondisiLampu;
 	}
-	public String getPosisiLampu() {
+	public int getPosisiLampu() {
 		return posisiLampu;
 	}
-	public void setPosisiLampu(String posisiLampu) {
+	public void setPosisiLampu(int posisiLampu) {
 		this.posisiLampu = posisiLampu;
 	}
 	public int getJumlahKipasAngin() {
@@ -81,16 +80,16 @@ public class JumlahKondisidanPosisiSarana {
 	public void setJumlahKipasAngin(int jumlahKipasAngin) {
 		this.jumlahKipasAngin = jumlahKipasAngin;
 	}
-	public String getKondisiKipasAngin() {
+	public int getKondisiKipasAngin() {
 		return kondisiKipasAngin;
 	}
-	public void setKondisiKipasAngin(String kondisiKipasAngin) {
+	public void setKondisiKipasAngin(int kondisiKipasAngin) {
 		this.kondisiKipasAngin = kondisiKipasAngin;
 	}
-	public String getPosisiKipasAngin() {
+	public int getPosisiKipasAngin() {
 		return posisiKipasAngin;
 	}
-	public void setPosisiKipasAngin(String posisiKipasAngin) {
+	public void setPosisiKipasAngin(int posisiKipasAngin) {
 		this.posisiKipasAngin = posisiKipasAngin;
 	}
 	public int getJumlahAc() {
@@ -99,29 +98,28 @@ public class JumlahKondisidanPosisiSarana {
 	public void setJumlahAc(int jumlahAc) {
 		this.jumlahAc = jumlahAc;
 	}
-	public String getKondisiAc() {
+	public int getKondisiAc() {
 		return kondisiAc;
 	}
-	public void setKondisiAc(String kondisiAc) {
+	public void setKondisiAc(int kondisiAc) {
 		this.kondisiAc = kondisiAc;
 	}
-	public String getPosisiAc() {
+	public int getPosisiAc() {
 		return posisiAc;
 	}
-	public void setPosisiAc(String posisiAc) {
+	public void setPosisiAc(int posisiAc) {
 		this.posisiAc = posisiAc;
 	}
-
 	public int getSSID() {
 		return SSID;
 	}
-	public void setSSID(int SSID) {
-		this.SSID = SSID;
+	public void setSSID(int sSID) {
+		SSID = sSID;
 	}
-	public String getInputBandwidth() {
+	public int getInputBandwidth() {
 		return inputBandwidth;
 	}
-	public void setInputBandwidth(String inputBandwidth) {
+	public void setInputBandwidth(int inputBandwidth) {
 		this.inputBandwidth = inputBandwidth;
 	}
 	public int getJumlahCctv() {
@@ -130,21 +128,21 @@ public class JumlahKondisidanPosisiSarana {
 	public void setJumlahCctv(int jumlahCctv) {
 		this.jumlahCctv = jumlahCctv;
 	}
-	public String getKondisiCctv() {
+	public int getKondisiCctv() {
 		return kondisiCctv;
 	}
-	public void setKondisiCctv(String kondisiCctv) {
+	public void setKondisiCctv(int kondisiCctv) {
 		this.kondisiCctv = kondisiCctv;
 	}
-	public String getPosisiCctv() {
+	public int getPosisiCctv() {
 		return posisiCctv;
 	}
-	public void setPosisiCctv(String posisiCctv) {
+	public void setPosisiCctv(int posisiCctv) {
 		this.posisiCctv = posisiCctv;
 	}
 	
-	String analisisListrik(int steker, String posisi, String kondisi){
-		if(steker >= 4 && "baik = 4".equals(kondisi) && "pojok ruang dan dekat dosen".equals(posisi)){
+	String analisisListrik(int steker, int kondisi, int posisi){
+		if(steker >= 4 && kondisi==1 && posisi==1){
 			return "sesuai";
 		}
 		else{
@@ -152,8 +150,8 @@ public class JumlahKondisidanPosisiSarana {
 		}
 	}
 	
-	String analisisLcd(int kabel, String posisi, String kondisi){
-		if(kabel >= 1 && "baik".equals(kondisi) && "dekat dosen".equals(posisi)){
+	String analisisLcd(int kabel,  int kondisi, int posisi){
+		if(kabel >= 1 && kondisi==2 && posisi==1){
 			return "sesuai";
 		}
 		else{
@@ -161,8 +159,8 @@ public class JumlahKondisidanPosisiSarana {
 		}
 	}
 	
-	String analisisLampu(int lampu, String posisi, String kondisi){
-		if(lampu >= 18 && "baik = 18".equals(kondisi)&& "atap ruangan".equals(posisi)){
+	String analisisLampu(int lampu, int posisi, int kondisi){
+		if(lampu >= 18 && kondisi==2 && posisi==1){
 			return "sesuai";
 		}
 		else{
@@ -170,8 +168,8 @@ public class JumlahKondisidanPosisiSarana {
 		}
 	}
 	
-	String analisiKipasAngin(int kipas, String posisi, String kondisi){
-		if(kipas >= 2 && "baik = 2".equals(kondisi)&& "atap ruangan".equals(posisi)){
+	String analisiKipasAngin(int kipas, int posisi, int kondisi){
+		if(kipas >= 2 && kondisi==3&& posisi==2){
 			return "sesuai";
 		}
 		else{
@@ -179,8 +177,8 @@ public class JumlahKondisidanPosisiSarana {
 		}
 	}
 	
-	String analisiAc(int ac, String kondisi, String posisi){
-		if(ac >= 1 && "baik".equals(kondisi)&& "dibelakang/disamping".equals(posisi)){
+	String analisiAc(int ac, int kondisi, int posisi){
+		if(ac >= 1 && kondisi==1&& posisi==2){
 			return "sesuai";
 		}
 		else{
@@ -188,8 +186,8 @@ public class JumlahKondisidanPosisiSarana {
 		}
 	}
 	
-	String analisiInterner(int SSID, String login){
-		if(SSID==1 && "bisa".equals(login)){
+	String analisiInterner(int SSID, int login){
+		if(SSID==1 && login==2){
 			return "sesuai";
 		}
 			else{
@@ -197,16 +195,12 @@ public class JumlahKondisidanPosisiSarana {
 			}
 	}
 	
-	String analisiCctv(int cctv, String kondisi, String posisi){
-		if(cctv >= 2 && "baik = 2".equals(kondisi) && "depan dan belakang".equals(posisi)){
+	String analisiCctv(int cctv, int kondisi, int posisi){
+		if(cctv >= 2 && kondisi==2 && posisi==1){
 			return "sesuai";
 		}
 		else{
 			return "tidak sesuai";
 		}
 	}
-	
-
 }
-
-
