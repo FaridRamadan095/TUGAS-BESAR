@@ -3,8 +3,9 @@ import java.util.Scanner;
 
 public class main {
 	public static void main(String[] args){
-		IdentitasRuangKelas identitas = new IdentitasRuangKelas();
+		
 		Scanner in = new Scanner(System.in);
+		IdentitasRuangKelas identitas = new IdentitasRuangKelas();
 		System.out.print("Masukkan Nama Ruang, Lokasi, dan Fakultas :");
 		identitas.setNamaRuang(in.next());
 		identitas.setLokasiRuang(in.next());
@@ -25,34 +26,52 @@ public class main {
 		System.out.println("pintu dan jendela "+kondisi.analisisPintuJendela(kondisi.getJumlahPintu(), kondisi.getJumlahJendela()));
 		
 		JumlahKondisidanPosisiSarana sarana = new JumlahKondisidanPosisiSarana();
-		System.out.println("Masukkan jumlahSteker, KondisiSteker, posisiSteker");
+		System.out.println("Masukkan jumlahSteker ");
 		sarana.setJumlahStopkontak(in.nextInt());
-		sarana.setKondisiStopKontak(in.next());
-		sarana.setPosisiStopKontak(in.next());
+		System.out.println("KondisiSteker (1.Baik, 2.Rusak, 3.Kurang Baik)");
+		sarana.setKondisiStopKontak(in.nextInt());
+		System.out.println("posisiSteker (1.pojok ruang dan dekat dosen, 2.di tengah ruang, 3.dekat pintu)");
+		sarana.setPosisiStopKontak(in.nextInt());
 		System.out.println("analisis kelistrikan "+sarana.analisisListrik(sarana.getJumlahStopkontak(), sarana.getKondisiStopKontak(), sarana.getPosisiStopKontak()));
-		System.out.println("Masukkan jumlahKabelLcd, kondidiKabelLcd, posisiKabelLcd");
+		System.out.println("Masukkan jumlahKabelLcd ");
 		sarana.setJumlahKabelLcd(in.nextInt());
-		sarana.setKondisiKabelLcd(in.next());
-		sarana.setPosisiKabelLcd(in.next());
+		System.out.println("kondidiKabelLcd(1.rusak, 2.berfungsi)");
+		sarana.setKondisiKabelLcd(in.nextInt());
+		System.out.println("posisiKabelLcd(1.dekat dosen, 2. dekat pintu, 3.di tengah ruang)");
+		sarana.setPosisiKabelLcd(in.nextInt());
 		System.out.println("analisis Lcd "+sarana.analisisLcd(sarana.getJumlahKabelLcd(), sarana.getPosisiKabelLcd(), sarana.getKondisiKabelLcd()));
-		System.out.println("Masukkan jumlahLampu, kondisiLampu, posisiLampu");
+		System.out.println("Masukkan jumlahLampu ");
 		sarana.setJumlahLampu(in.nextInt());
-		sarana.setKondisiLampu(in.next());
-		sarana.setPosisiLampu(in.next());
+		System.out.println("kondisiLampu(1.baik 14, 2.baik 18, 3.baik 5");
+		sarana.setKondisiLampu(in.nextInt());
+		System.out.println("posisiLampu(1.atap ruangan, 2.dinding ruangan");
+		sarana.setPosisiLampu(in.nextInt());
 		System.out.println("analisis Lampu "+sarana.analisisLampu(sarana.getJumlahLampu(), sarana.getPosisiLampu(), sarana.getKondisiLampu()));
-		System.out.println("Masukkan jumlahKipaAngin, kondisiKipasAngin, posisiKipasAngin");
+		System.out.println("Masukkan jumlahKipaAngin ");
 		sarana.setJumlahKipasAngin(in.nextInt());
-		sarana.setKondisiKipasAngin(in.next());
-		sarana.setPosisiKipasAngin(in.next());
+		System.out.println("kondisiKipasAngin(1.rusak semua, 2.baik 1, 3.baik 2 ");
+		sarana.setKondisiKipasAngin(in.nextInt());
+		System.out.println("posisiKipasAngin(1.dinding ruangan,2.atap ruangan");
+		sarana.setPosisiKipasAngin(in.nextInt());
 		System.out.println("analisis kipas angin "+sarana.analisiKipasAngin(sarana.getJumlahKipasAngin(), sarana.getPosisiKipasAngin(), sarana.getKondisiKipasAngin()));
-		System.out.println("Pilih SSID (1.UMM Hotspot, 2.UMM Hotspot Premium, 3.CORO, 4.Komo Pindah), bandwidth ");
+		System.out.println("masukkan jumlahAc ");
+		sarana.setJumlahAc(in.nextInt());
+		System.out.println("kondisiAc(1.baik, 2.rusak)");
+		sarana.setKondisiAc(in.nextInt());
+		System.out.println("posisiAc(1.ditengah, 2.dibelakang/disamping)");
+		sarana.setPosisiAc(in.nextInt());
+		System.out.println("analisis AC "+sarana.analisiAc(sarana.getJumlahAc(), sarana.getKondisiAc(), sarana.getPosisiAc()));
+		System.out.println("Pilih SSID (1.UMM Hotspot, 2.UMM Hotspot Premium, 3.CORO, 4.Komo Pindah)");
 		sarana.setSSID(in.nextInt());
-		sarana.setInputBandwidth(in.next());
+		System.out.println("bandwidth (1.tidak bisa login, 2.bisa login)");
+		sarana.setInputBandwidth(in.nextInt());
 		System.out.println("analisis internet "+sarana.analisiInterner(sarana.getSSID(), sarana.getInputBandwidth()));
-		System.out.println("Masukkan jumlahCctv, kondisiCctv, PosisiCctv");
+		System.out.println("Masukkan jumlahCctv ");
 		sarana.setJumlahCctv(in.nextInt());
-		sarana.setKondisiCctv(in.next());
-		sarana.setPosisiCctv(in.next());
+		System.out.println("kondisiCctv(1. rusak semua, 2.baik 2, 3.baik 1");
+		sarana.setKondisiCctv(in.nextInt());
+		System.out.println("posisiCctv(1.depan dan belakang, 2. samping kanan dan kiri");
+		sarana.setPosisiCctv(in.nextInt());
 		System.out.println("analisis Cctv "+sarana.analisiCctv(sarana.getJumlahCctv(), sarana.getKondisiCctv(), sarana.getPosisiCctv()));
 		
 		LingkunganRuangKelas lingkup = new LingkunganRuangKelas();
@@ -96,20 +115,35 @@ public class main {
 		System.out.println("analisis keausan "+nyaman.analisisKeausan(nyaman.getKeausan()));
 		
 		KeamananRuangKelas keamananan = new KeamananRuangKelas();
-		System.out.println("Masukkan kekokohan ");
-		keamananan.setKekokohan(in.next());
-		System.out.println("Kekokohan "+keamananan.analisisKekokohan(keamananan.getKekokohan()));
-		System.out.println("Masukkan Kunci pintu dan Jendela ");
-		keamananan.setKunciPintu(in.next());
-		keamananan.setKunciJendela(in.next());
-		System.out.println("Analisis Kekokohan "+keamananan.analisisKunciPintuJendela(keamananan.getKunciPintu(), keamananan.getKunciJendela()));
-		System.out.println("Masukkan Bahaya ");
-		keamananan.setBahaya(in.next());
-		System.out.println("Analisis Keamanan Ruang "+keamananan.keamananRuang(keamananan.getBahaya()));
+		boolean ulang=false;
+		while(ulang==false){
+			System.out.println("Masukkan kekokohan ");
+			keamananan.setKekokohan(in.next());
+			System.out.println("Kekokohan "+keamananan.analisisKekokohan(keamananan.getKekokohan()));
+			System.out.println("Masukkan Kunci pintu dan Jendela ");
+			keamananan.setKunciPintu(in.next());
+			keamananan.setKunciJendela(in.next());
+			System.out.println("Analisis Kunci Pintu dan Jendela "+keamananan.analisisKunciPintuJendela(keamananan.getKunciPintu(), keamananan.getKunciJendela()));
+			System.out.println("Masukkan Bahaya ");
+			keamananan.setBahaya(in.next());
+			System.out.println("Analisis Keamanan Ruang "+keamananan.keamananRuang(keamananan.getBahaya()));
+			
+			System.out.println("List Inputan\nDi kelas Keamanan Ruang"
+					+ "\nKekokohan "+keamananan.getKekokohan()+
+					"\nKunci Pintu "+keamananan.getKunciPintu()+
+					"\nKunci Jendela "+keamananan.getKunciJendela()+
+					"\nBahaya "+keamananan.getBahaya()+
+					"\nIngin Edit? (y/n)");
+			if(in.next().toLowerCase().equals("y")){
+				ulang=false;
+			}else{
+				ulang=true;
+				break;
+			}
+		}
 		
-		System.out.println("List Inputan\nDi kelas Identitas Ruang"+identitas.getNamaRuang()+
-				" "+identitas.getLokasiRuang()+" "+identitas.getFakultas()+"\nDi Kelas kondisi");
 		
+		System.out.println("Selesai");
 		
 	}
 
