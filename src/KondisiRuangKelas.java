@@ -1,10 +1,33 @@
 
-public class KondisiRuangKelas {
+public class KondisiRuangKelas extends IdentitasRuangKelas {
 	private int panjangRuang;
 	private int lebarRuang;
 	private int jumlahKursi;
 	private int jumlahPintu;
 	private int jumlahJendela;
+	
+	public KondisiRuangKelas(String namaRuang, String lokasiRuang,
+			String Fakultas) {
+		super(namaRuang, lokasiRuang, Fakultas);
+
+	}
+	
+	
+	
+	public KondisiRuangKelas(String namaRuang, String lokasiRuang,
+			String Fakultas, int panjangRuang, int lebarRuang, int jumlahKursi,
+			int jumlahPintu, int jumlahJendela) {
+		super(namaRuang, lokasiRuang, Fakultas);
+		this.panjangRuang = panjangRuang;
+		this.lebarRuang = lebarRuang;
+		this.jumlahKursi = jumlahKursi;
+		this.jumlahPintu = jumlahPintu;
+		this.jumlahJendela = jumlahJendela;
+	}
+
+
+
+
 	public int getPanjangRuang() {
 		return panjangRuang;
 	}

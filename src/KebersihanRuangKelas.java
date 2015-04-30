@@ -1,10 +1,35 @@
-public class KebersihanRuangKelas {
+public class KebersihanRuangKelas extends LingkunganRuangKelas {
 	
 	private String sirkulasiUdara;
 	private int nilaiPencahayaan;
 	private int inputKelembapan;
 	private int inputSuhu;
 	
+	public KebersihanRuangKelas(String namaRuang, String lokasiRuang,
+			String Fakultas, String kondisiLantai, String kondisiDinding,
+			String kondisiAtap, String kondisiPintu, String kondisiJendela) {
+		super(namaRuang, lokasiRuang, Fakultas, kondisiLantai, kondisiDinding,
+				kondisiAtap, kondisiPintu, kondisiJendela);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public KebersihanRuangKelas(String namaRuang, String lokasiRuang,
+			String Fakultas) {
+		super(namaRuang, lokasiRuang, Fakultas);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	public KebersihanRuangKelas(String namaRuang, String lokasiRuang,
+			String Fakultas, String sirkulasiUdara, int nilaiPencahayaan,
+			int inputKelembapan, int inputSuhu) {
+		super(namaRuang, lokasiRuang, Fakultas);
+		this.sirkulasiUdara = sirkulasiUdara;
+		this.nilaiPencahayaan = nilaiPencahayaan;
+		this.inputKelembapan = inputKelembapan;
+		this.inputSuhu = inputSuhu;
+	}
+
 	public String getSirkulasiUdara() {
 		return sirkulasiUdara;
 	}

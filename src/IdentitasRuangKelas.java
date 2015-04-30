@@ -3,24 +3,25 @@ public class IdentitasRuangKelas {
 	private String namaRuang;
 	private String lokasiRuang;
 	private String Fakultas;
+	public IdentitasRuangKelas(String namaRuang, String lokasiRuang,
+			String Fakultas) {
+		
+		this.namaRuang = namaRuang;
+		this.lokasiRuang = lokasiRuang;
+		this.Fakultas = Fakultas;
+	}
 	public String getNamaRuang() {
 		return namaRuang;
-	}
-	public void setNamaRuang(String namaRuang) {
-		this.namaRuang = namaRuang;
 	}
 	public String getLokasiRuang() {
 		return lokasiRuang;
 	}
-	public void setLokasiRuang(String lokasiRuang) {
-		this.lokasiRuang = lokasiRuang;
-	}
 	public String getFakultas() {
 		return Fakultas;
 	}
-	public void setFakultas(String fakultas) {
-		Fakultas = fakultas;
-	}
+
+	
+	
 	
 
 }

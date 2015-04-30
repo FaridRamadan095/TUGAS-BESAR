@@ -1,10 +1,20 @@
 
-public class KeamananRuangKelas {
+public class KeamananRuangKelas extends IdentitasRuangKelas {
 
 	private String kekokohan;
 	private String kunciPintu;
 	private String kunciJendela;
 	private String bahaya;
+	
+	public KeamananRuangKelas(String namaRuang, String lokasiRuang,
+			String Fakultas) {
+		super(namaRuang, lokasiRuang, Fakultas);
+		
+	}
+	
+
+
+
 	public String getKekokohan() {
 		return kekokohan;
 	}

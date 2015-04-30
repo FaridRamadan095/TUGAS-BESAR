@@ -1,5 +1,5 @@
 
-public class KenyamananRuangKelas {
+public class KenyamananRuangKelas extends LingkunganRuangKelas {
 	private int kebisingan;
 	private int bau;
 	private int kebocoran;
@@ -7,6 +7,34 @@ public class KenyamananRuangKelas {
 	private int keausan;
 	
 
+	public KenyamananRuangKelas(String namaRuang, String lokasiRuang,
+			String Fakultas, String kondisiLantai, String kondisiDinding,
+			String kondisiAtap, String kondisiPintu, String kondisiJendela) {
+		super(namaRuang, lokasiRuang, Fakultas, kondisiLantai, kondisiDinding,
+				kondisiAtap, kondisiPintu, kondisiJendela);
+		// TODO Auto-generated constructor stub
+	}
+	public KenyamananRuangKelas(String namaRuang, String lokasiRuang,
+			String Fakultas) {
+		super(namaRuang, lokasiRuang, Fakultas);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	public KenyamananRuangKelas(String namaRuang, String lokasiRuang,
+			String Fakultas, int kebisingan, int bau, int kebocoran,
+			int kerusakan, int keausan) {
+		super(namaRuang, lokasiRuang, Fakultas);
+		this.kebisingan = kebisingan;
+		this.bau = bau;
+		this.kebocoran = kebocoran;
+		this.kerusakan = kerusakan;
+		this.keausan = keausan;
+	}
+	
+	
+	
+	
 	public int getKebisingan() {
 		return kebisingan;
 	}

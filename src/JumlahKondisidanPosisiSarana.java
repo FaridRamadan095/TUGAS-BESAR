@@ -1,4 +1,4 @@
-public class JumlahKondisidanPosisiSarana {
+public class JumlahKondisidanPosisiSarana extends KondisiRuangKelas{
 	private int jumlahStopkontak;
 	private int kondisiStopKontak;
 	private int posisiStopKontak;
@@ -20,6 +20,54 @@ public class JumlahKondisidanPosisiSarana {
 	private int kondisiCctv;
 	private int posisiCctv;
 	
+	
+
+	public JumlahKondisidanPosisiSarana(String namaRuang, String lokasiRuang,
+			String Fakultas, int panjangRuang, int lebarRuang, int jumlahKursi,
+			int jumlahPintu, int jumlahJendela) {
+		super(namaRuang, lokasiRuang, Fakultas, panjangRuang, lebarRuang, jumlahKursi,
+				jumlahPintu, jumlahJendela);
+	
+	}
+	public JumlahKondisidanPosisiSarana(String namaRuang, String lokasiRuang,
+			String Fakultas) {
+		super(namaRuang, lokasiRuang, Fakultas);
+		
+	}
+	
+	
+	
+	
+	public JumlahKondisidanPosisiSarana(String namaRuang, String lokasiRuang,
+			String Fakultas, int jumlahStopkontak, int kondisiStopKontak,
+			int posisiStopKontak, int jumlahKabelLcd, int kondisiKabelLcd,
+			int posisiKabelLcd, int jumlahLampu, int kondisiLampu,
+			int posisiLampu, int jumlahKipasAngin, int kondisiKipasAngin,
+			int posisiKipasAngin, int jumlahAc, int kondisiAc, int posisiAc,
+			int sSID, int inputBandwidth, int jumlahCctv, int kondisiCctv,
+			int posisiCctv) {
+		super(namaRuang, lokasiRuang, Fakultas);
+		this.jumlahStopkontak = jumlahStopkontak;
+		this.kondisiStopKontak = kondisiStopKontak;
+		this.posisiStopKontak = posisiStopKontak;
+		this.jumlahKabelLcd = jumlahKabelLcd;
+		this.kondisiKabelLcd = kondisiKabelLcd;
+		this.posisiKabelLcd = posisiKabelLcd;
+		this.jumlahLampu = jumlahLampu;
+		this.kondisiLampu = kondisiLampu;
+		this.posisiLampu = posisiLampu;
+		this.jumlahKipasAngin = jumlahKipasAngin;
+		this.kondisiKipasAngin = kondisiKipasAngin;
+		this.posisiKipasAngin = posisiKipasAngin;
+		this.jumlahAc = jumlahAc;
+		this.kondisiAc = kondisiAc;
+		this.posisiAc = posisiAc;
+		SSID = sSID;
+		this.inputBandwidth = inputBandwidth;
+		this.jumlahCctv = jumlahCctv;
+		this.kondisiCctv = kondisiCctv;
+		this.posisiCctv = posisiCctv;
+	}
 	public int getJumlahStopkontak() {
 		return jumlahStopkontak;
 	}
