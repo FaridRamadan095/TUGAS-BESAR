@@ -35,9 +35,9 @@ public class main {
 		System.out.println("analisis kelistrikan "+sarana.analisisListrik(sarana.getJumlahStopkontak(), sarana.getKondisiStopKontak(), sarana.getPosisiStopKontak()));
 		System.out.println("Masukkan jumlahKabelLcd ");
 		sarana.setJumlahKabelLcd(in.nextInt());
-		System.out.println("kondidiKabelLcd(1.rusak, 2.berfungsi)");
+		System.out.println("kondidiKabelLcd(1.berfungsi, 2.rusak)");
 		sarana.setKondisiKabelLcd(in.nextInt());
-		System.out.println("posisiKabelLcd(1.dekat dosen, 2. dekat pintu, 3.di tengah ruang)");
+		System.out.println("posisiKabelLcd(1.dekat pintu, 2. dekat dosen, 3.di tengah ruang)");
 		sarana.setPosisiKabelLcd(in.nextInt());
 		System.out.println("analisis Lcd "+sarana.analisisLcd(sarana.getJumlahKabelLcd(), sarana.getPosisiKabelLcd(), sarana.getKondisiKabelLcd()));
 		System.out.println("Masukkan jumlahLampu ");
@@ -98,20 +98,20 @@ public class main {
 		System.out.println("analisis suhu "+bersih.analisisSuhu(bersih.getInputSuhu()));
 		
 		KenyamananRuangKelas nyaman = new KenyamananRuangKelas();
-		System.out.println("Masukkan kebisingan");
-		nyaman.setKebisingan(in.next());
+		System.out.println("Masukkan kebisingan(1.tidak bising, 2.bising");
+		nyaman.setKebisingan(in.nextInt());
 		System.out.println("analisis kebisingan "+nyaman.analisisKebisingan(nyaman.getKebisingan()));
-		System.out.println("Masukkan bau");
-		nyaman.setBau(in.next());
+		System.out.println("Masukkan bau(1.bau, 2.tidak bau");
+		nyaman.setBau(in.nextInt());
 		System.out.println("analisis bau "+nyaman.analisisBau(nyaman.getBau()));
-		System.out.println("Masukkan kebocoran");
-		nyaman.setKebocoran(in.next());
+		System.out.println("Masukkan kebocoran(1.bocor, 2.tidak bocor");
+		nyaman.setKebocoran(in.nextInt());
 		System.out.println("analisis kebocoran "+nyaman.analisisKebocoran(nyaman.getKebocoran()));
-		System.out.println("Masukkan kerusakan");
-		nyaman.setKerusakan(in.next());
+		System.out.println("Masukkan kerusakan(1.tidak rusak,2.rusak)");
+		nyaman.setKerusakan(in.nextInt());
 		System.out.println("analisis kerusakan "+nyaman.analisisKerusakan(nyaman.getKerusakan()));
-		System.out.println("Masukkan keausan");
-		nyaman.setKeausan(in.next());
+		System.out.println("Masukkan keausan(1.aus, 2.tidak aus");
+		nyaman.setKeausan(in.nextInt());
 		System.out.println("analisis keausan "+nyaman.analisisKeausan(nyaman.getKeausan()));
 		
 		KeamananRuangKelas keamananan = new KeamananRuangKelas();
