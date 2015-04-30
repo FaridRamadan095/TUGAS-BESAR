@@ -1,81 +1,80 @@
+
 public class KenyamananRuangKelas {
+	private int kebisingan;
+	private int bau;
+	private int kebocoran;
+	private int kerusakan;
+	private int keausan;
 	
-	private String kebisingan;
-	private String bau;
-	private String kebocoran;
-	private String kerusakan;
-	private String keausan;
-	
-	public String getKebisingan() {
+
+	public int getKebisingan() {
 		return kebisingan;
 	}
-	public void setKebisingan(String kebisingan) {
+	public void setKebisingan(int kebisingan) {
 		this.kebisingan = kebisingan;
 	}
-	public String getBau() {
+	public int getBau() {
 		return bau;
 	}
-	public void setBau(String bau) {
+	public void setBau(int bau) {
 		this.bau = bau;
 	}
-	public String getKebocoran() {
+	public int getKebocoran() {
 		return kebocoran;
 	}
-	public void setKebocoran(String kebocoran) {
+	public void setKebocoran(int kebocoran) {
 		this.kebocoran = kebocoran;
 	}
-	public String getKerusakan() {
+	public int getKerusakan() {
 		return kerusakan;
 	}
-	public void setKerusakan(String kerusakan) {
+	public void setKerusakan(int kerusakan) {
 		this.kerusakan = kerusakan;
 	}
-	public String getKeausan() {
+	public int getKeausan() {
 		return keausan;
 	}
-	public void setKeausan(String keausan) {
+	public void setKeausan(int keausan) {
 		this.keausan = keausan;
 	}
-	
-	String analisisKebisingan(String bising){
-		if("tidak bising".equals(bising)){
+	String analisisKebisingan(int bising){
+		if(bising==1){
 			return "sesuai";
 			}
 			else{
 			return "tidak sesuai";
 			}
 	}
-	String analisisBau(String bau){
-		if("tidak bau".equals(bau)){
+	String analisisBau(int bau){
+		if(bau==2){
 			return "sesuai";
 			}
 			else{
 			return "tidak sesuai";
 			}
 	}
-	String analisisKebocoran(String bocor){
-		if("tidak bocor".equals(bocor)){
+	String analisisKebocoran(int bocor){
+		if(bocor==2){
 			return "sesuai";
 			}
 			else{
 			return "tidak sesuai";
 			}
 	}
-	String analisisKerusakan(String rusak){
-		if("tidak rusak".equals(rusak)){
+	String analisisKerusakan(int rusak){
+		if(rusak==1){
 			return "sesuai";
 			}
 			else{
 			return "tidak sesuai";
 			}
 	}
-	String analisisKeausan(String aus){
-		if("tidak aus".equals(aus)){
+	String analisisKeausan(int aus){
+		if(aus==2){
 			return "sesuai";
 			}
 			else{
 			return "tidak sesuai";
 			}
 	}
-	
 }
