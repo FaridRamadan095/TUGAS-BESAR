@@ -1,4 +1,4 @@
-public class LingkunganRuangKelas extends IdentitasRuangKelas{
+public abstract class LingkunganRuangKelas extends IdentitasRuangKelas{
 
 	
 

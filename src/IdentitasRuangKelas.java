@@ -1,8 +1,12 @@
-
-public class IdentitasRuangKelas {
+public abstract class IdentitasRuangKelas {
 	private String namaRuang;
 	private String lokasiRuang;
 	private String Fakultas;
+	
+	public IdentitasRuangKelas(){
+		
+	}
+	
 	public IdentitasRuangKelas(String namaRuang, String lokasiRuang,
 			String Fakultas) {
 		
@@ -10,6 +14,20 @@ public class IdentitasRuangKelas {
 		this.lokasiRuang = lokasiRuang;
 		this.Fakultas = Fakultas;
 	}
+	
+	
+	public void setNamaRuang(String namaRuang) {
+		this.namaRuang = namaRuang;
+	}
+
+	public void setLokasiRuang(String lokasiRuang) {
+		this.lokasiRuang = lokasiRuang;
+	}
+
+	public void setFakultas(String fakultas) {
+		Fakultas = fakultas;
+	}
+
 	public String getNamaRuang() {
 		return namaRuang;
 	}
@@ -20,6 +38,8 @@ public class IdentitasRuangKelas {
 		return Fakultas;
 	}
 
+	
+	abstract public String deskripsiKelas();
 	
 	
 	

@@ -1,5 +1,5 @@
 
-public class KondisiRuangKelas extends IdentitasRuangKelas {
+public abstract class KondisiRuangKelas extends IdentitasRuangKelas {
 	private int panjangRuang;
 	private int lebarRuang;
 	private int jumlahKursi;
@@ -60,11 +60,11 @@ public class KondisiRuangKelas extends IdentitasRuangKelas {
 	}
 	
 	
-	int hitungLuasRuang(int panjang, int lebar){
+	public int hitungLuasRuang(int panjang, int lebar){
 		return panjang*lebar;
 	}
 	
-	String hitungBentukRuang(int panjang, int lebar){
+	public String hitungBentukRuang(int panjang, int lebar){
 		if(panjang!=lebar){
 			return "sesuai";
 		}
@@ -74,7 +74,7 @@ public class KondisiRuangKelas extends IdentitasRuangKelas {
 	}
 	
 	
-	String hitungRasioLuas(int luas, int kursi){
+	public String hitungRasioLuas(int luas, int kursi){
 		if((luas/kursi)>=0.5){
 			return "sesuai";
 		}
@@ -86,7 +86,7 @@ public class KondisiRuangKelas extends IdentitasRuangKelas {
 	
 	
 	
-	String analisisPintuJendela(int pintu, int jendela){
+	public String analisisPintuJendela(int pintu, int jendela){
 		if(pintu>=1&&jendela>=2){
 			return "sesuai";
 		}

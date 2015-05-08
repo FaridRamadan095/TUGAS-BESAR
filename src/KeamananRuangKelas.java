@@ -1,14 +1,22 @@
 
-public class KeamananRuangKelas extends IdentitasRuangKelas {
+public class KeamananRuangKelas extends IdentitasRuangKelas implements hitung {
 
 	private String kekokohan;
 	private String kunciPintu;
 	private String kunciJendela;
 	private String bahaya;
 	
+	
+	
+	private int sesuai=0;
+	private int tdksesuai=0;
+	
+	
+	
 	public KeamananRuangKelas(String namaRuang, String lokasiRuang,
 			String Fakultas) {
 		super(namaRuang, lokasiRuang, Fakultas);
+		
 		
 	}
 	
@@ -42,7 +50,7 @@ public class KeamananRuangKelas extends IdentitasRuangKelas {
 	
 	
 	String analisisKekokohan(String kokoh){
-		if("ada".equals(kokoh)){
+		if("kokoh".equals(kokoh)){
 			return "sesuai";
 		}
 		else{
@@ -60,13 +68,56 @@ public class KeamananRuangKelas extends IdentitasRuangKelas {
 	}
 	
 	
-	String keamananRuang(String aman){
+	String analisisKeamananRuang(String aman){
 		if("aman".equals(aman)){
 			return "sesuai";
 		}
 		else{
 			return "tidak sesuai";
 		}
+	}
+	
+
+
+
+
+	@Override
+	public String deskripsiKelas() {
+		if(sesuai > tdksesuai){
+			return "Inventaris Keamanan Memenuhi Standar";
+		}
+		else{
+			return "Inventaris Keamanan Kurang Memenuhi Standar";
+		}
+	}
+
+
+
+
+	@Override
+	public int hitungSesuai() {
+		if("sesuai".equals(analisisKekokohan(getKekokohan()))){
+			++sesuai;
+		}else{
+			++tdksesuai;
+		}
+		if("sesuai".equals(analisisKunciPintuJendela(getKunciPintu(), getKunciJendela()))){
+			++sesuai;
+		}else{
+			++tdksesuai;
+		}
+		if("sesuai".equals(analisisKeamananRuang(getBahaya()))){
+			++sesuai;
+		}else{
+			++tdksesuai;
+		}
+		return sesuai;
+	}
+
+	@Override
+	public int hitungTdkSesuai() {
+		// TODO Auto-generated method stub
+		return tdksesuai;
 	}
 	
 	

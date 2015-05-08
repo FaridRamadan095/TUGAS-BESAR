@@ -1,5 +1,5 @@
 
-public class KenyamananRuangKelas extends LingkunganRuangKelas {
+public abstract class KenyamananRuangKelas extends LingkunganRuangKelas {
 	private int kebisingan;
 	private int bau;
 	private int kebocoran;
