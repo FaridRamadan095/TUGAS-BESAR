@@ -1,4 +1,6 @@
-public abstract class IdentitasRuangKelas {
+import java.io.Serializable;
+
+public abstract class IdentitasRuangKelas implements Serializable {
 	private String namaRuang;
 	private String lokasiRuang;
 	private String Fakultas;

@@ -1,5 +1,7 @@
+import java.io.Serializable;
 
-public class KeamananRuangKelas extends IdentitasRuangKelas implements hitung {
+
+public class KeamananRuangKelas extends IdentitasRuangKelas implements hitung, Serializable{
 
 	private String kekokohan;
 	private String kunciPintu;
@@ -11,6 +13,10 @@ public class KeamananRuangKelas extends IdentitasRuangKelas implements hitung {
 	private int sesuai=0;
 	private int tdksesuai=0;
 	
+	
+	public KeamananRuangKelas(){
+		
+	}
 	
 	
 	public KeamananRuangKelas(String namaRuang, String lokasiRuang,

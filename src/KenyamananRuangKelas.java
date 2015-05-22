@@ -1,5 +1,7 @@
+import java.io.Serializable;
 
-public abstract class KenyamananRuangKelas extends LingkunganRuangKelas {
+
+public abstract class KenyamananRuangKelas extends LingkunganRuangKelas implements Serializable {
 	private int kebisingan;
 	private int bau;
 	private int kebocoran;
@@ -7,6 +9,10 @@ public abstract class KenyamananRuangKelas extends LingkunganRuangKelas {
 	private int keausan;
 	
 
+	public KenyamananRuangKelas(){
+		
+	}
+	
 	public KenyamananRuangKelas(String namaRuang, String lokasiRuang,
 			String Fakultas, String kondisiLantai, String kondisiDinding,
 			String kondisiAtap, String kondisiPintu, String kondisiJendela) {

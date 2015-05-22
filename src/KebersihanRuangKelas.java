@@ -1,4 +1,6 @@
-public class KebersihanRuangKelas extends KenyamananRuangKelas implements hitung{
+import java.io.Serializable;
+
+public class KebersihanRuangKelas extends KenyamananRuangKelas implements hitung, Serializable{
 	
 	private String sirkulasiUdara;
 	private int nilaiPencahayaan;
@@ -10,7 +12,9 @@ public class KebersihanRuangKelas extends KenyamananRuangKelas implements hitung
 	private int sesuai=0;
 	private int tdksesuai=0;
 	
-	
+	public KebersihanRuangKelas(){
+		
+	}
 	
 	public KebersihanRuangKelas(String namaRuang, String lokasiRuang,
 			String Fakultas, int kebisingan, int bau, int kebocoran,
