@@ -7,7 +7,7 @@ public class BacaTulisFile {
 	
 	
 	
-	public void simpanKondisi(JumlahKondisidanPosisiSarana dat){
+	public static void simpanKondisi(JumlahKondisidanPosisiSarana dat){
 		try {
 			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("datakondisi.dat"));
 			oos.writeObject(dat);
@@ -18,7 +18,7 @@ public class BacaTulisFile {
 		
 	}
 	
-	public JumlahKondisidanPosisiSarana bacaKondisi(){
+	public static JumlahKondisidanPosisiSarana bacaKondisi(){
 		JumlahKondisidanPosisiSarana dat=null;
 		
 		try {
@@ -32,7 +32,7 @@ public class BacaTulisFile {
 		return dat;
 	}	
 	
-	public void simpanBersih(KebersihanRuangKelas dat){
+	public static void simpanBersih(KebersihanRuangKelas dat){
 		try {
 			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("databersih.dat"));
 			oos.writeObject(dat);
@@ -43,7 +43,7 @@ public class BacaTulisFile {
 		
 	}
 	
-	public KebersihanRuangKelas bacaBersih(){
+	public static KebersihanRuangKelas bacaBersih(){
 		KebersihanRuangKelas dat=null;
 		
 		try {
@@ -57,7 +57,7 @@ public class BacaTulisFile {
 		return dat;
 	}	
 	
-	public void simpanKeamanan(KeamananRuangKelas dat){
+	public static void simpanKeamanan(KeamananRuangKelas dat){
 		try {
 			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("datakeamanan.dat"));
 			oos.writeObject(dat);
@@ -68,7 +68,7 @@ public class BacaTulisFile {
 		
 	}
 	
-	public KeamananRuangKelas bacaKeamanan(){
+	public static KeamananRuangKelas bacaKeamanan(){
 		KeamananRuangKelas dat=null;
 		
 		try {

@@ -203,7 +203,7 @@ public class JumlahKondisidanPosisiSarana extends KondisiRuangKelas implements h
 	}
 	
 	public String analisisListrik(int steker, int kondisi, int posisi){
-		if(steker >= 4 && kondisi==1 && posisi==1){
+		if(steker >= 4 && kondisi==0 && posisi==0){
 			return "sesuai";
 		}
 		else{
@@ -212,7 +212,7 @@ public class JumlahKondisidanPosisiSarana extends KondisiRuangKelas implements h
 	}
 	
 	public String analisisLcd(int kabel,  int kondisi, int posisi){
-		if(kabel >= 1 && kondisi==2 && posisi==1){
+		if(kabel >= 1 && kondisi==0 && posisi==1){
 			return "sesuai";
 		}
 		else{
@@ -220,8 +220,8 @@ public class JumlahKondisidanPosisiSarana extends KondisiRuangKelas implements h
 		}
 	}
 	
-	public String analisisLampu(int lampu, int posisi, int kondisi){
-		if(lampu >= 18 && kondisi==2 && posisi==1){
+	public String analisisLampu(int lampu, int kondisi, int posisi){
+		if(lampu >= 18 && kondisi==1 && posisi==0){
 			return "sesuai";
 		}
 		else{
@@ -230,7 +230,7 @@ public class JumlahKondisidanPosisiSarana extends KondisiRuangKelas implements h
 	}
 	
 	public String analisiKipasAngin(int kipas, int kondisi, int posisi){
-		if(kipas >= 2 && kondisi==3&& posisi==2){
+		if(kipas >= 2 && kondisi==2&& posisi==1){
 			return "sesuai";
 		}
 		else{
@@ -239,7 +239,7 @@ public class JumlahKondisidanPosisiSarana extends KondisiRuangKelas implements h
 	}
 	
 	public String analisiAc(int ac, int kondisi, int posisi){
-		if(ac >= 1 && kondisi==1&& posisi==2){
+		if(ac >= 1 && kondisi==0 && posisi==1){
 			return "sesuai";
 		}
 		else{
@@ -248,7 +248,7 @@ public class JumlahKondisidanPosisiSarana extends KondisiRuangKelas implements h
 	}
 	
 	public String analisiInterner(int SSID, int login){
-		if(SSID==1 && login==2){
+		if(SSID==0 && login==1){
 			return "sesuai";
 		}
 			else{
@@ -257,7 +257,7 @@ public class JumlahKondisidanPosisiSarana extends KondisiRuangKelas implements h
 	}
 	
 	public String analisiCctv(int cctv, int kondisi, int posisi){
-		if(cctv >= 2 && kondisi==2 && posisi==1){
+		if(cctv >= 2 && kondisi==1 && posisi==0){
 			return "sesuai";
 		}
 		else{
@@ -295,6 +295,11 @@ public class JumlahKondisidanPosisiSarana extends KondisiRuangKelas implements h
 		}else{
 			++tdksesuai;
 		}
+		if("sesuai".equals(analisisLcd(getJumlahKabelLcd(), getKondisiKabelLcd(), getPosisiKabelLcd()))){
+			++sesuai;
+		}else{
+			++tdksesuai;
+		}
 		if("sesuai".equals(analisisLampu(getJumlahLampu(), getKondisiLampu(), getPosisiLampu()))){
 			++sesuai;
 		}else{
@@ -305,7 +310,7 @@ public class JumlahKondisidanPosisiSarana extends KondisiRuangKelas implements h
 		}else{
 			++tdksesuai;
 		}
-		if("Sesuai".equals(analisiAc(getJumlahAc(), getKondisiAc(), getPosisiAc()))){
+		if("sesuai".equals(analisiAc(getJumlahAc(), getKondisiAc(), getPosisiAc()))){
 			++sesuai;
 		}else{
 			++tdksesuai;
