@@ -74,7 +74,7 @@ public abstract class LingkunganRuangKelas extends IdentitasRuangKelas implement
 	
 	
 	String analisisKebersihan(String lantai, String dinding, String atap, String pintu, String jendela){
-		if("bersih".equals(lantai) && "bersih".equals(dinding) && "bersih".equals(jendela) && "bersih".equals(atap) && "bersih".equals(pintu)){
+		if("Bersih".equals(lantai) && "Bersih".equals(dinding) && "Bersih".equals(jendela) && "Bersih".equals(atap) && "Bersih".equals(pintu)){
 			return "sesuai";
 		}
 		else{

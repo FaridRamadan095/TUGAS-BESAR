@@ -72,7 +72,7 @@ public abstract class KenyamananRuangKelas extends LingkunganRuangKelas implemen
 		this.keausan = keausan;
 	}
 	String analisisKebisingan(int bising){
-		if(bising==1){
+		if(bising==0){
 			return "sesuai";
 			}
 			else{
@@ -80,7 +80,7 @@ public abstract class KenyamananRuangKelas extends LingkunganRuangKelas implemen
 			}
 	}
 	String analisisBau(int bau){
-		if(bau==2){
+		if(bau==1){
 			return "sesuai";
 			}
 			else{
@@ -88,7 +88,7 @@ public abstract class KenyamananRuangKelas extends LingkunganRuangKelas implemen
 			}
 	}
 	String analisisKebocoran(int bocor){
-		if(bocor==2){
+		if(bocor==1){
 			return "sesuai";
 			}
 			else{
@@ -96,7 +96,7 @@ public abstract class KenyamananRuangKelas extends LingkunganRuangKelas implemen
 			}
 	}
 	String analisisKerusakan(int rusak){
-		if(rusak==1){
+		if(rusak==0){
 			return "sesuai";
 			}
 			else{
@@ -104,7 +104,7 @@ public abstract class KenyamananRuangKelas extends LingkunganRuangKelas implemen
 			}
 	}
 	String analisisKeausan(int aus){
-		if(aus==2){
+		if(aus==1){
 			return "sesuai";
 			}
 			else{

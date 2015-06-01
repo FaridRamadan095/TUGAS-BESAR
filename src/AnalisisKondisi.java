@@ -52,7 +52,12 @@ public class AnalisisKondisi extends JFrame {
 	 * Create the application.
 	 */
 	public AnalisisKondisi() {
-		initialize();
+		try {
+			initialize();
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "GAGAL : "+e, "Erorr", JOptionPane.ERROR_MESSAGE);
+		}
+		
 	}
 
 	/**

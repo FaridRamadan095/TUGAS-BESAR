@@ -56,7 +56,7 @@ public class KeamananRuangKelas extends IdentitasRuangKelas implements hitung, S
 	
 	
 	String analisisKekokohan(String kokoh){
-		if("kokoh".equals(kokoh)){
+		if("Kokoh".equals(kokoh)){
 			return "sesuai";
 		}
 		else{
@@ -65,7 +65,7 @@ public class KeamananRuangKelas extends IdentitasRuangKelas implements hitung, S
 	}
 	
 	String analisisKunciPintuJendela(String kunciPintu, String kunciJendela){
-		if("ada".equals(kunciPintu)&&"ada".equals(kunciJendela)){
+		if("Ada".equals(kunciPintu)&&"Ada".equals(kunciJendela)){
 			return "sesuai";
 		}
 		else{
@@ -75,7 +75,7 @@ public class KeamananRuangKelas extends IdentitasRuangKelas implements hitung, S
 	
 	
 	String analisisKeamananRuang(String aman){
-		if("aman".equals(aman)){
+		if("Aman".equals(aman)){
 			return "sesuai";
 		}
 		else{
