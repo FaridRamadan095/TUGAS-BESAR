@@ -528,20 +528,20 @@ public class GUI extends JFrame implements Serializable {
 			}
 		});
 		btnLoad.setForeground(Color.WHITE);
-		btnLoad.setBackground(new Color(204, 0, 0));
+		btnLoad.setBackground(new Color(0, 0, 102));
 		panel_1.setLayout(new BorderLayout(0, 0));
 		panel_1.add(btnLoad, BorderLayout.EAST);
 		
 		JButton buttonAnalisis = new JButton("Analisis");
 		buttonAnalisis.setForeground(Color.WHITE);
-		buttonAnalisis.setBackground(new Color(204, 0, 0));
+		buttonAnalisis.setBackground(new Color(0, 0, 102));
 		buttonAnalisis.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					kondisi = new JumlahKondisidanPosisiSarana();
 					kondisi.setNamaRuang(textFieldNamaRuang.getText());
-					kondisi.setLokasiRuang(comboBoxLokasi.getSelectedItem().toString());
-					kondisi.setFakultas(comboBoxFakultas.getSelectedItem().toString());
+					kondisi.setLokasiRuang(comboBoxLokasi.getSelectedItem()+"");
+					kondisi.setFakultas(comboBoxFakultas.getSelectedItem()+"");
 					kondisi.setPanjangRuang(Integer.parseInt(textFieldPanjang.getText()));
 					kondisi.setLebarRuang(Integer.parseInt(textFieldLebar.getText()));
 					kondisi.setJumlahKursi(Integer.parseInt(textFieldJumlahKursi.getText()));
@@ -592,10 +592,13 @@ public class GUI extends JFrame implements Serializable {
 		JButton button_1 = new JButton(">");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				InventarisKebersihan invber = new InventarisKebersihan();
+				invber.setVisible(true);
+				dispose();
 			}
 		});
 		button_1.setForeground(Color.WHITE);
-		button_1.setBackground(new Color(204, 0, 0));
+		button_1.setBackground(new Color(0, 0, 102));
 		button_1.setToolTipText("Next");
 		getContentPane().add(button_1, BorderLayout.EAST);
 		

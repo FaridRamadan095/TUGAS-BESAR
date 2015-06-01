@@ -73,7 +73,7 @@ public class KebersihanRuangKelas extends KenyamananRuangKelas implements hitung
 	}
 	
 	String analisisSirkulasiUdara(String sirkulasi){
-		if("lancar".equals(sirkulasi)){
+		if("Lancar".equals(sirkulasi)){
 			return "sesuai";
 			}
 			else{
@@ -119,6 +119,11 @@ public class KebersihanRuangKelas extends KenyamananRuangKelas implements hitung
 	@Override
 	public int hitungSesuai() {
 		if("sesuai".equals(analisisKebersihan(getKondisiLantai(), getKondisiDinding(), getKondisiAtap(), getKondisiPintu(), getKondisiJendela()))){
+			++sesuai;
+		}else{
+			++tdksesuai;
+		}
+		if("sesuai".equals(analisisSirkulasiUdara(getSirkulasiUdara()))){
 			++sesuai;
 		}else{
 			++tdksesuai;
