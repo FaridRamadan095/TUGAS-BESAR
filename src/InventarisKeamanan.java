@@ -58,6 +58,7 @@ public class InventarisKeamanan extends JFrame {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		setResizable(false);
 		setBounds(100, 100, 797, 493);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
