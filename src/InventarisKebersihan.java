@@ -24,6 +24,13 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JToolBar;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 
 public class InventarisKebersihan extends JFrame{
 
@@ -59,6 +66,7 @@ public class InventarisKebersihan extends JFrame{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		setResizable(false);
 		setBounds(100, 100, 797, 477);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -378,7 +386,7 @@ public class InventarisKebersihan extends JFrame{
 		
 		JTextPane txtpnNamaruang = new JTextPane();
 		txtpnNamaruang.setEditable(false);
-		txtpnNamaruang.setText(BacaTulisFile.bacaKondisi().getNamaRuang());
+//		txtpnNamaruang.setText(BacaTulisFile.bacaKondisi().getNamaRuang());
 		txtpnNamaruang.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		txtpnNamaruang.setBackground(new Color(255, 204, 0));
 		txtpnNamaruang.setBounds(563, 11, 122, 20);
@@ -386,7 +394,7 @@ public class InventarisKebersihan extends JFrame{
 		
 		JTextPane txtpnFakultas = new JTextPane();
 		txtpnFakultas.setEditable(false);
-		txtpnFakultas.setText(BacaTulisFile.bacaKondisi().getFakultas());
+//		txtpnFakultas.setText(BacaTulisFile.bacaKondisi().getFakultas());
 		txtpnFakultas.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		txtpnFakultas.setBackground(new Color(255, 204, 0));
 		txtpnFakultas.setBounds(563, 42, 122, 20);
@@ -394,7 +402,7 @@ public class InventarisKebersihan extends JFrame{
 		
 		JTextPane txtpnLokasi = new JTextPane();
 		txtpnLokasi.setEditable(false);
-		txtpnLokasi.setText(BacaTulisFile.bacaKondisi().getLokasiRuang());
+//		txtpnLokasi.setText(BacaTulisFile.bacaKondisi().getLokasiRuang());
 		txtpnLokasi.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		txtpnLokasi.setBackground(new Color(255, 204, 0));
 		txtpnLokasi.setBounds(563, 73, 122, 20);
@@ -431,7 +439,7 @@ public class InventarisKebersihan extends JFrame{
 		JButton button = new JButton("<");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				GUI gu = new GUI();
+				GUI2 gu = new GUI2();
 				gu.setVisible(true);
 				dispose();
 			}
@@ -522,5 +530,33 @@ public class InventarisKebersihan extends JFrame{
 		btnLoad.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnLoad.setBackground(new Color(153, 0, 0));
 		panelbawah.add(btnLoad, BorderLayout.EAST);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBackground(new Color(204, 0, 0));
+		setJMenuBar(menuBar);
+		
+		JMenu mnFile = new JMenu("File");
+		mnFile.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		mnFile.setForeground(Color.WHITE);
+		menuBar.add(mnFile);
+		
+		JMenuItem mntmLogout = new JMenuItem("LogOut");
+		mntmLogout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				Login log = new Login();
+				log.setVisible(true);
+			}
+		});
+		mnFile.add(mntmLogout);
+		
+		JMenuItem mntmExit = new JMenuItem("Exit");
+		mntmExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+			}
+		});
+		mnFile.addSeparator();
+		mnFile.add(mntmExit);
 	}
 }

@@ -26,6 +26,9 @@ import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+
 
 public class InventarisKeamanan extends JFrame {
 
@@ -58,6 +61,7 @@ public class InventarisKeamanan extends JFrame {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		setResizable(false);
 		setBounds(100, 100, 797, 493);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -157,7 +161,7 @@ public class InventarisKeamanan extends JFrame {
 		panel.add(txtpnBahaya);
 		
 		JTextPane textPaneNamaRuang = new JTextPane();
-		textPaneNamaRuang.setText(BacaTulisFile.bacaKondisi().getNamaRuang());
+//		textPaneNamaRuang.setText(BacaTulisFile.bacaKondisi().getNamaRuang());
 		textPaneNamaRuang.setForeground(Color.WHITE);
 		textPaneNamaRuang.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		textPaneNamaRuang.setEditable(false);
@@ -166,7 +170,7 @@ public class InventarisKeamanan extends JFrame {
 		panel.add(textPaneNamaRuang);
 		
 		JTextPane textPaneFakultas = new JTextPane();
-		textPaneFakultas.setText(BacaTulisFile.bacaKondisi().getFakultas());
+//		textPaneFakultas.setText(BacaTulisFile.bacaKondisi().getFakultas());
 		textPaneFakultas.setForeground(Color.WHITE);
 		textPaneFakultas.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		textPaneFakultas.setEditable(false);
@@ -175,7 +179,7 @@ public class InventarisKeamanan extends JFrame {
 		panel.add(textPaneFakultas);
 		
 		JTextPane textPaneLokasi = new JTextPane();
-		textPaneLokasi.setText(BacaTulisFile.bacaKondisi().getLokasiRuang());
+//		textPaneLokasi.setText(BacaTulisFile.bacaKondisi().getLokasiRuang());
 		textPaneLokasi.setForeground(Color.WHITE);
 		textPaneLokasi.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		textPaneLokasi.setEditable(false);
@@ -276,5 +280,33 @@ public class InventarisKeamanan extends JFrame {
 		button.setForeground(Color.WHITE);
 		button.setBackground(new Color(255, 102, 0));
 		getContentPane().add(button, BorderLayout.WEST);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBackground(new Color(204, 0, 0));
+		setJMenuBar(menuBar);
+		
+		JMenu mnFile = new JMenu("File");
+		mnFile.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		mnFile.setForeground(Color.WHITE);
+		menuBar.add(mnFile);
+		
+		JMenuItem mntmLogout = new JMenuItem("LogOut");
+		mntmLogout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				Login log = new Login();
+				log.setVisible(true);
+			}
+		});
+		mnFile.add(mntmLogout);
+		
+		JMenuItem mntmExit = new JMenuItem("Exit");
+		mntmExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+			}
+		});
+		mnFile.addSeparator();
+		mnFile.add(mntmExit);
 	}
 }
