@@ -392,7 +392,7 @@ public class InventarisKebersihan extends JFrame{
 		
 		JTextPane txtpnNamaruang = new JTextPane();
 		txtpnNamaruang.setEditable(false);
-//		txtpnNamaruang.setText(BacaTulisFile.bacaKondisi().getNamaRuang());
+		txtpnNamaruang.setText(BacaTulisFile.bacaKondisi().getNamaRuang());
 		txtpnNamaruang.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		txtpnNamaruang.setBackground(new Color(255, 204, 0));
 		txtpnNamaruang.setBounds(509, 21, 122, 20);
@@ -400,7 +400,7 @@ public class InventarisKebersihan extends JFrame{
 		
 		JTextPane txtpnFakultas = new JTextPane();
 		txtpnFakultas.setEditable(false);
-//		txtpnFakultas.setText(BacaTulisFile.bacaKondisi().getFakultas());
+		txtpnFakultas.setText(BacaTulisFile.bacaKondisi().getFakultas());
 		txtpnFakultas.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		txtpnFakultas.setBackground(new Color(255, 204, 0));
 		txtpnFakultas.setBounds(509, 52, 122, 20);
@@ -408,7 +408,7 @@ public class InventarisKebersihan extends JFrame{
 		
 		JTextPane txtpnLokasi = new JTextPane();
 		txtpnLokasi.setEditable(false);
-//		txtpnLokasi.setText(BacaTulisFile.bacaKondisi().getLokasiRuang());
+		txtpnLokasi.setText(BacaTulisFile.bacaKondisi().getLokasiRuang());
 		txtpnLokasi.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		txtpnLokasi.setBackground(new Color(255, 204, 0));
 		txtpnLokasi.setBounds(509, 83, 122, 20);

@@ -166,7 +166,7 @@ public class InventarisKeamanan extends JFrame {
 		panel.add(txtpnBahaya);
 		
 		JTextPane textPaneNamaRuang = new JTextPane();
-//		textPaneNamaRuang.setText(BacaTulisFile.bacaKondisi().getNamaRuang());
+		textPaneNamaRuang.setText(BacaTulisFile.bacaKondisi().getNamaRuang());
 		textPaneNamaRuang.setForeground(Color.WHITE);
 		textPaneNamaRuang.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		textPaneNamaRuang.setEditable(false);
@@ -175,7 +175,7 @@ public class InventarisKeamanan extends JFrame {
 		panel.add(textPaneNamaRuang);
 		
 		JTextPane textPaneFakultas = new JTextPane();
-//		textPaneFakultas.setText(BacaTulisFile.bacaKondisi().getFakultas());
+		textPaneFakultas.setText(BacaTulisFile.bacaKondisi().getFakultas());
 		textPaneFakultas.setForeground(Color.WHITE);
 		textPaneFakultas.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		textPaneFakultas.setEditable(false);
@@ -184,7 +184,7 @@ public class InventarisKeamanan extends JFrame {
 		panel.add(textPaneFakultas);
 		
 		JTextPane textPaneLokasi = new JTextPane();
-//		textPaneLokasi.setText(BacaTulisFile.bacaKondisi().getLokasiRuang());
+		textPaneLokasi.setText(BacaTulisFile.bacaKondisi().getLokasiRuang());
 		textPaneLokasi.setForeground(Color.WHITE);
 		textPaneLokasi.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		textPaneLokasi.setEditable(false);
