@@ -26,9 +26,12 @@ import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+<<<<<<< HEAD
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
+=======
+>>>>>>> origin/master
 
 public class InventarisKeamanan extends JFrame {
 
@@ -161,7 +164,11 @@ public class InventarisKeamanan extends JFrame {
 		panel.add(txtpnBahaya);
 		
 		JTextPane textPaneNamaRuang = new JTextPane();
+<<<<<<< HEAD
 //		textPaneNamaRuang.setText(BacaTulisFile.bacaKondisi().getNamaRuang());
+=======
+		textPaneNamaRuang.setText(BacaTulisFile.bacaKondisi().getNamaRuang());
+>>>>>>> origin/master
 		textPaneNamaRuang.setForeground(Color.WHITE);
 		textPaneNamaRuang.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		textPaneNamaRuang.setEditable(false);
@@ -170,7 +177,11 @@ public class InventarisKeamanan extends JFrame {
 		panel.add(textPaneNamaRuang);
 		
 		JTextPane textPaneFakultas = new JTextPane();
+<<<<<<< HEAD
 //		textPaneFakultas.setText(BacaTulisFile.bacaKondisi().getFakultas());
+=======
+		textPaneFakultas.setText(BacaTulisFile.bacaKondisi().getFakultas());
+>>>>>>> origin/master
 		textPaneFakultas.setForeground(Color.WHITE);
 		textPaneFakultas.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		textPaneFakultas.setEditable(false);
@@ -179,7 +190,11 @@ public class InventarisKeamanan extends JFrame {
 		panel.add(textPaneFakultas);
 		
 		JTextPane textPaneLokasi = new JTextPane();
+<<<<<<< HEAD
 //		textPaneLokasi.setText(BacaTulisFile.bacaKondisi().getLokasiRuang());
+=======
+		textPaneLokasi.setText(BacaTulisFile.bacaKondisi().getLokasiRuang());
+>>>>>>> origin/master
 		textPaneLokasi.setForeground(Color.WHITE);
 		textPaneLokasi.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		textPaneLokasi.setEditable(false);
@@ -280,6 +295,7 @@ public class InventarisKeamanan extends JFrame {
 		button.setForeground(Color.WHITE);
 		button.setBackground(new Color(255, 102, 0));
 		getContentPane().add(button, BorderLayout.WEST);
+<<<<<<< HEAD
 		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(new Color(204, 0, 0));
@@ -308,5 +324,7 @@ public class InventarisKeamanan extends JFrame {
 		});
 		mnFile.addSeparator();
 		mnFile.add(mntmExit);
+=======
+>>>>>>> origin/master
 	}
 }

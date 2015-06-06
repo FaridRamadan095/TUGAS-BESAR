@@ -110,7 +110,12 @@ public class GUI extends JFrame implements Serializable {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+<<<<<<< HEAD
 		setBounds(100, 100, 797, 500);
+=======
+		setResizable(false);
+		setBounds(100, 100, 797, 477);
+>>>>>>> origin/master
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		
@@ -571,8 +576,13 @@ public class GUI extends JFrame implements Serializable {
 		});
 		btnLoad.setForeground(Color.WHITE);
 		btnLoad.setBackground(new Color(0, 0, 102));
+<<<<<<< HEAD
 		panelbawahkondisi.setLayout(new BorderLayout(0, 0));
 		panelbawahkondisi.add(btnLoad, BorderLayout.EAST);
+=======
+		panel_1.setLayout(new BorderLayout(0, 0));
+		panel_1.add(btnLoad, BorderLayout.EAST);
+>>>>>>> origin/master
 		
 		JButton buttonAnalisis = new JButton("Analisis");
 		buttonAnalisis.setForeground(Color.WHITE);
@@ -1005,6 +1015,7 @@ public class GUI extends JFrame implements Serializable {
 		JButton button = new JButton("Analisis");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+<<<<<<< HEAD
 				try {
 					bersih = new KebersihanRuangKelas();
 					
@@ -1038,6 +1049,17 @@ public class GUI extends JFrame implements Serializable {
 		button.setForeground(Color.WHITE);
 		button.setFont(new Font("Tahoma", Font.BOLD, 12));
 		button.setBackground(new Color(153, 0, 0));
+=======
+				InventarisKebersihan invber = new InventarisKebersihan();
+				invber.setVisible(true);
+				dispose();
+			}
+		});
+		button_1.setForeground(Color.WHITE);
+		button_1.setBackground(new Color(0, 0, 102));
+		button_1.setToolTipText("Next");
+		getContentPane().add(button_1, BorderLayout.EAST);
+>>>>>>> origin/master
 		
 		JButton button_2 = new JButton("Load");
 		button_2.addActionListener(new ActionListener() {
