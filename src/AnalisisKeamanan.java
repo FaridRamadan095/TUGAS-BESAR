@@ -66,11 +66,8 @@ public class AnalisisKeamanan extends JFrame {
 		keamanan=BacaTulisFile.bacaKeamanan();
 		String[] kolom = {"Analisis","Hasil"};
 		String[][] data = {
-<<<<<<< HEAD
 				{"Kekokohan",keamanan.analisisKekokohan(keamanan.getKekokohan())},
-=======
 				{"Kekokohan",keamanan.analisisKeamananRuang(keamanan.getKekokohan())},
->>>>>>> origin/master
 				{"Kunci Pintu & Kunci Jendela",keamanan.analisisKunciPintuJendela(keamanan.getKunciPintu(), keamanan.getKunciJendela())},
 				{"Bahaya",keamanan.analisisKeamananRuang(keamanan.getBahaya())},
 
