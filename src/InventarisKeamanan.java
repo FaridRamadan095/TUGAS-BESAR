@@ -9,6 +9,7 @@ import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
+import java.awt.Desktop;
 import java.awt.Font;
 import java.awt.Color;
 
@@ -26,6 +27,8 @@ import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+
+import java.net.URL;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -163,8 +166,7 @@ public class InventarisKeamanan extends JFrame {
 		panel.add(txtpnBahaya);
 		
 		JTextPane textPaneNamaRuang = new JTextPane();
-		textPaneNamaRuang.setText(BacaTulisFile.bacaKondisi().getNamaRuang());
-		textPaneNamaRuang.setText(BacaTulisFile.bacaKondisi().getNamaRuang());
+//		textPaneNamaRuang.setText(BacaTulisFile.bacaKondisi().getNamaRuang());
 		textPaneNamaRuang.setForeground(Color.WHITE);
 		textPaneNamaRuang.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		textPaneNamaRuang.setEditable(false);
@@ -173,8 +175,7 @@ public class InventarisKeamanan extends JFrame {
 		panel.add(textPaneNamaRuang);
 		
 		JTextPane textPaneFakultas = new JTextPane();
-		textPaneFakultas.setText(BacaTulisFile.bacaKondisi().getFakultas());
-		textPaneFakultas.setText(BacaTulisFile.bacaKondisi().getFakultas());
+//		textPaneFakultas.setText(BacaTulisFile.bacaKondisi().getFakultas());
 		textPaneFakultas.setForeground(Color.WHITE);
 		textPaneFakultas.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		textPaneFakultas.setEditable(false);
@@ -183,8 +184,7 @@ public class InventarisKeamanan extends JFrame {
 		panel.add(textPaneFakultas);
 		
 		JTextPane textPaneLokasi = new JTextPane();
-		textPaneLokasi.setText(BacaTulisFile.bacaKondisi().getLokasiRuang());
-		textPaneLokasi.setText(BacaTulisFile.bacaKondisi().getLokasiRuang());
+//		textPaneLokasi.setText(BacaTulisFile.bacaKondisi().getLokasiRuang());
 		textPaneLokasi.setForeground(Color.WHITE);
 		textPaneLokasi.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		textPaneLokasi.setEditable(false);
@@ -229,6 +229,7 @@ public class InventarisKeamanan extends JFrame {
 		paneBawah.setLayout(new BorderLayout(0, 0));
 		
 		JButton btnNewButton = new JButton("Analisis");
+		btnNewButton.setIcon(new ImageIcon(InventarisKeamanan.class.getResource("/as/download.png")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
@@ -241,6 +242,7 @@ public class InventarisKeamanan extends JFrame {
 					BacaTulisFile.simpanKeamanan(keamanan);
 					AnalisisKeamanan aman = new AnalisisKeamanan();
 					aman.setVisible(true);
+					new Diagram(keamanan.hitungSesuai(), keamanan.hitungTdkSesuai());
 				} catch (Exception e) {
 					JOptionPane.showMessageDialog(null, "input dengan benar : "+e, "Erorr", JOptionPane.ERROR_MESSAGE);
 				}
@@ -254,6 +256,7 @@ public class InventarisKeamanan extends JFrame {
 		paneBawah.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Load");
+		btnNewButton_1.setIcon(new ImageIcon(InventarisKeamanan.class.getResource("/as/load-md.png")));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
@@ -273,7 +276,8 @@ public class InventarisKeamanan extends JFrame {
 		btnNewButton_1.setBackground(new Color(255, 102, 0));
 		paneBawah.add(btnNewButton_1, BorderLayout.EAST);
 		
-		JButton button = new JButton("<");
+		JButton button = new JButton("");
+		button.setIcon(new ImageIcon(InventarisKeamanan.class.getResource("/as/left-28998_640.png")));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				InventarisKebersihan invber = new InventarisKebersihan();
@@ -291,11 +295,13 @@ public class InventarisKeamanan extends JFrame {
 		setJMenuBar(menuBar);
 		
 		JMenu mnFile = new JMenu("File");
+		mnFile.setIcon(new ImageIcon(InventarisKeamanan.class.getResource("/as/Card-file-icon.png")));
 		mnFile.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		mnFile.setForeground(Color.WHITE);
 		menuBar.add(mnFile);
 		
 		JMenuItem mntmLogout = new JMenuItem("LogOut");
+		mntmLogout.setIcon(new ImageIcon(InventarisKeamanan.class.getResource("/as/logout.png")));
 		mntmLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
@@ -306,6 +312,7 @@ public class InventarisKeamanan extends JFrame {
 		mnFile.add(mntmLogout);
 		
 		JMenuItem mntmExit = new JMenuItem("Exit");
+		mntmExit.setIcon(new ImageIcon(InventarisKeamanan.class.getResource("/as/logout (1).png")));
 		mntmExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
@@ -313,5 +320,56 @@ public class InventarisKeamanan extends JFrame {
 		});
 		mnFile.addSeparator();
 		mnFile.add(mntmExit);
+		
+		JMenu mnAuthors = new JMenu("Authors");
+		mnAuthors.setIcon(new ImageIcon(InventarisKeamanan.class.getResource("/as/User.png")));
+		mnAuthors.setForeground(Color.WHITE);
+		menuBar.add(mnAuthors);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("Tri Fidrian Arya");
+		mntmNewMenuItem.setIcon(new ImageIcon(InventarisKeamanan.class.getResource("/as/Messenger.png")));
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				try{
+					Desktop.getDesktop().browse(new URL("https://www.facebook.com/Tri.Fidrian.Arya").toURI());
+					   
+				}catch(Exception ex){
+					JOptionPane.showMessageDialog(null, "Gagal Membuka", "Error", JOptionPane.ERROR_MESSAGE);
+					}
+			}
+			
+		});
+		mnAuthors.add(mntmNewMenuItem);
+		
+		JMenuItem mntmFaridRamadan = new JMenuItem("Farid Ramadan");
+		mntmFaridRamadan.setIcon(new ImageIcon(InventarisKeamanan.class.getResource("/as/Messenger.png")));
+		mntmFaridRamadan.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+			
+				try {
+					Desktop.getDesktop().browse(new URL("https://www.facebook.com/farid.cliquers.904?fref=ts").toURI());
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "Gagal Membuka", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+				
+			}
+		});
+		mnAuthors.add(mntmFaridRamadan);
+		
+		JMenuItem mntmAlfianNoorArafah = new JMenuItem("Alfian Noor Arafah");
+		mntmAlfianNoorArafah.setIcon(new ImageIcon(InventarisKeamanan.class.getResource("/as/Messenger.png")));
+		mntmAlfianNoorArafah.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					Desktop.getDesktop().browse(new URL("https://www.facebook.com/alfiannoorarafah.arafah?fref=ts").toURI());
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "Gagal Membuka", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
+		mnAuthors.add(mntmAlfianNoorArafah);
 	}
 }

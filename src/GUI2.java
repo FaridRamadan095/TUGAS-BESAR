@@ -22,6 +22,7 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Canvas;
@@ -44,6 +45,7 @@ import java.awt.color.CMMException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.io.Serializable;
+import java.net.URL;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -55,6 +57,9 @@ import javax.swing.JTabbedPane;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 
 public class GUI2 extends JFrame implements Serializable {
@@ -118,20 +123,6 @@ public class GUI2 extends JFrame implements Serializable {
 		getContentPane().add(panelKondisi, BorderLayout.CENTER);
 		panelKondisi.setLayout(new BorderLayout(0, 0));
 		
-		Panel panelataskondisi = new Panel();
-		panelKondisi.add(panelataskondisi, BorderLayout.NORTH);
-		panelataskondisi.setBackground(new Color(0, 0, 102));
-		
-		JLabel lblInventarisKelas = new JLabel("Inventaris Kondisi");
-		lblInventarisKelas.setForeground(Color.WHITE);
-		lblInventarisKelas.setBackground(new Color(0, 0, 153));
-		lblInventarisKelas.setIcon(null);
-		panelataskondisi.add(lblInventarisKelas);
-		lblInventarisKelas.setFont(new Font("Algerian", Font.BOLD, 13));
-		
-		JPanel panelbawahkondisi = new JPanel();
-		panelKondisi.add(panelbawahkondisi, BorderLayout.SOUTH);
-		
 
 		
 		JPanel paneltengahkondisi = new JPanel();
@@ -158,20 +149,20 @@ public class GUI2 extends JFrame implements Serializable {
 		
 		textFieldNamaRuang = new JTextField();
 		textFieldNamaRuang.setBackground(new Color(255, 204, 51));
-		textFieldNamaRuang.setBounds(140, 10, 173, 20);
+		textFieldNamaRuang.setBounds(140, 10, 134, 20);
 		paneltengahkondisi.add(textFieldNamaRuang);
 		textFieldNamaRuang.setColumns(10);
 		
 		JComboBox comboBoxLokasi = new JComboBox();
 		comboBoxLokasi.setBackground(new Color(255, 204, 51));
 		comboBoxLokasi.setModel(new DefaultComboBoxModel(new String[] {"GKB I", "GKB II", "GKB III"}));
-		comboBoxLokasi.setBounds(140, 38, 173, 20);
+		comboBoxLokasi.setBounds(140, 38, 134, 20);
 		paneltengahkondisi.add(comboBoxLokasi);
 		
 		JComboBox comboBoxFakultas = new JComboBox();
 		comboBoxFakultas.setBackground(new Color(255, 204, 51));
 		comboBoxFakultas.setModel(new DefaultComboBoxModel(new String[] {"Teknik", "FEB", "FPP", "FAI", "FK", "FIKES", "Hukum", "FISIP", "FKIP", "Psikologi"}));
-		comboBoxFakultas.setBounds(140, 63, 173, 20);
+		comboBoxFakultas.setBounds(140, 63, 134, 20);
 		paneltengahkondisi.add(comboBoxFakultas);
 		
 		JLabel lblPanjang = new JLabel("Panjang (meter)");
@@ -188,7 +179,7 @@ public class GUI2 extends JFrame implements Serializable {
 		
 		Canvas canvas = new Canvas();
 		canvas.setBackground(new Color(0, 0, 102));
-		canvas.setBounds(317, 0, 5, 400);
+		canvas.setBounds(284, 0, 5, 400);
 		paneltengahkondisi.add(canvas);
 		
 		textFieldPanjang = new JTextField();
@@ -245,7 +236,7 @@ public class GUI2 extends JFrame implements Serializable {
 		txtpnSteker.setForeground(Color.WHITE);
 		txtpnSteker.setBackground(new Color(0, 0, 153));
 		txtpnSteker.setText("Steker");
-		txtpnSteker.setBounds(327, 43, 85, 20);
+		txtpnSteker.setBounds(294, 43, 85, 20);
 		paneltengahkondisi.add(txtpnSteker);
 		
 		JTextPane textPaneLCD = new JTextPane();
@@ -254,7 +245,7 @@ public class GUI2 extends JFrame implements Serializable {
 		textPaneLCD.setFont(new Font("Tahoma", Font.BOLD, 11));
 		textPaneLCD.setEditable(false);
 		textPaneLCD.setBackground(new Color(0, 0, 153));
-		textPaneLCD.setBounds(327, 74, 85, 20);
+		textPaneLCD.setBounds(294, 74, 85, 20);
 		paneltengahkondisi.add(textPaneLCD);
 		
 		JTextPane txtpnLampu = new JTextPane();
@@ -263,7 +254,7 @@ public class GUI2 extends JFrame implements Serializable {
 		txtpnLampu.setFont(new Font("Tahoma", Font.BOLD, 11));
 		txtpnLampu.setEditable(false);
 		txtpnLampu.setBackground(new Color(0, 0, 153));
-		txtpnLampu.setBounds(327, 106, 85, 20);
+		txtpnLampu.setBounds(294, 106, 85, 20);
 		paneltengahkondisi.add(txtpnLampu);
 		
 		JTextPane txtpnKipasAngin = new JTextPane();
@@ -272,7 +263,7 @@ public class GUI2 extends JFrame implements Serializable {
 		txtpnKipasAngin.setFont(new Font("Tahoma", Font.BOLD, 11));
 		txtpnKipasAngin.setEditable(false);
 		txtpnKipasAngin.setBackground(new Color(0, 0, 153));
-		txtpnKipasAngin.setBounds(327, 139, 85, 20);
+		txtpnKipasAngin.setBounds(294, 139, 85, 20);
 		paneltengahkondisi.add(txtpnKipasAngin);
 		
 		JTextPane txtpnAc = new JTextPane();
@@ -281,7 +272,7 @@ public class GUI2 extends JFrame implements Serializable {
 		txtpnAc.setFont(new Font("Tahoma", Font.BOLD, 11));
 		txtpnAc.setEditable(false);
 		txtpnAc.setBackground(new Color(0, 0, 153));
-		txtpnAc.setBounds(327, 170, 85, 20);
+		txtpnAc.setBounds(294, 170, 85, 20);
 		paneltengahkondisi.add(txtpnAc);
 		
 		JTextPane txtpnHotspot = new JTextPane();
@@ -290,7 +281,7 @@ public class GUI2 extends JFrame implements Serializable {
 		txtpnHotspot.setFont(new Font("Tahoma", Font.BOLD, 11));
 		txtpnHotspot.setEditable(false);
 		txtpnHotspot.setBackground(new Color(0, 0, 153));
-		txtpnHotspot.setBounds(327, 260, 85, 20);
+		txtpnHotspot.setBounds(294, 260, 85, 20);
 		paneltengahkondisi.add(txtpnHotspot);
 		
 		JTextPane txtpnCctv = new JTextPane();
@@ -299,7 +290,7 @@ public class GUI2 extends JFrame implements Serializable {
 		txtpnCctv.setFont(new Font("Tahoma", Font.BOLD, 11));
 		txtpnCctv.setEditable(false);
 		txtpnCctv.setBackground(new Color(0, 0, 153));
-		txtpnCctv.setBounds(327, 201, 85, 20);
+		txtpnCctv.setBounds(294, 201, 85, 20);
 		paneltengahkondisi.add(txtpnCctv);
 		
 		JTextPane txtpnPrasarana = new JTextPane();
@@ -308,17 +299,17 @@ public class GUI2 extends JFrame implements Serializable {
 		txtpnPrasarana.setFont(new Font("Tahoma", Font.BOLD, 11));
 		txtpnPrasarana.setEditable(false);
 		txtpnPrasarana.setBackground(new Color(204, 0, 0));
-		txtpnPrasarana.setBounds(327, 10, 96, 20);
+		txtpnPrasarana.setBounds(294, 10, 96, 20);
 		paneltengahkondisi.add(txtpnPrasarana);
 		
 		Canvas canvas_1 = new Canvas();
 		canvas_1.setBackground(new Color(204, 0, 0));
-		canvas_1.setBounds(418, 10, 5, 275);
+		canvas_1.setBounds(385, 10, 5, 275);
 		paneltengahkondisi.add(canvas_1);
 		
 		Canvas canvas_2 = new Canvas();
 		canvas_2.setBackground(new Color(204, 0, 0));
-		canvas_2.setBounds(487, 28, 5, 242);
+		canvas_2.setBounds(456, 10, 5, 242);
 		paneltengahkondisi.add(canvas_2);
 		
 		JTextPane txtpnJumlah = new JTextPane();
@@ -327,7 +318,7 @@ public class GUI2 extends JFrame implements Serializable {
 		txtpnJumlah.setFont(new Font("Tahoma", Font.BOLD, 11));
 		txtpnJumlah.setEditable(false);
 		txtpnJumlah.setBackground(new Color(204, 0, 0));
-		txtpnJumlah.setBounds(419, 10, 72, 20);
+		txtpnJumlah.setBounds(386, 10, 72, 20);
 		paneltengahkondisi.add(txtpnJumlah);
 		
 		JTextPane txtpnKondisi = new JTextPane();
@@ -336,7 +327,7 @@ public class GUI2 extends JFrame implements Serializable {
 		txtpnKondisi.setFont(new Font("Tahoma", Font.BOLD, 11));
 		txtpnKondisi.setEditable(false);
 		txtpnKondisi.setBackground(new Color(204, 0, 0));
-		txtpnKondisi.setBounds(494, 10, 133, 20);
+		txtpnKondisi.setBounds(461, 10, 133, 20);
 		paneltengahkondisi.add(txtpnKondisi);
 		
 		JTextPane txtpnPosisi = new JTextPane();
@@ -345,48 +336,48 @@ public class GUI2 extends JFrame implements Serializable {
 		txtpnPosisi.setFont(new Font("Tahoma", Font.BOLD, 11));
 		txtpnPosisi.setEditable(false);
 		txtpnPosisi.setBackground(new Color(204, 0, 0));
-		txtpnPosisi.setBounds(627, 10, 105, 20);
+		txtpnPosisi.setBounds(594, 10, 105, 20);
 		paneltengahkondisi.add(txtpnPosisi);
 		
 		Canvas canvas_3 = new Canvas();
 		canvas_3.setBackground(new Color(204, 0, 0));
-		canvas_3.setBounds(598, 11, 5, 275);
+		canvas_3.setBounds(565, 11, 5, 275);
 		paneltengahkondisi.add(canvas_3);
 		
 		textFieldJumlahSteker = new JTextField();
 		textFieldJumlahSteker.setColumns(10);
 		textFieldJumlahSteker.setBackground(new Color(255, 204, 51));
-		textFieldJumlahSteker.setBounds(432, 43, 51, 20);
+		textFieldJumlahSteker.setBounds(399, 43, 51, 20);
 		paneltengahkondisi.add(textFieldJumlahSteker);
 		
 		textFieldJumlahLcd = new JTextField();
 		textFieldJumlahLcd.setColumns(10);
 		textFieldJumlahLcd.setBackground(new Color(255, 204, 51));
-		textFieldJumlahLcd.setBounds(432, 74, 51, 20);
+		textFieldJumlahLcd.setBounds(399, 74, 51, 20);
 		paneltengahkondisi.add(textFieldJumlahLcd);
 		
 		textFieldJumlahLampu = new JTextField();
 		textFieldJumlahLampu.setColumns(10);
 		textFieldJumlahLampu.setBackground(new Color(255, 204, 51));
-		textFieldJumlahLampu.setBounds(432, 103, 51, 20);
+		textFieldJumlahLampu.setBounds(399, 103, 51, 20);
 		paneltengahkondisi.add(textFieldJumlahLampu);
 		
 		textFieldJumlahKipasAngin = new JTextField();
 		textFieldJumlahKipasAngin.setColumns(10);
 		textFieldJumlahKipasAngin.setBackground(new Color(255, 204, 51));
-		textFieldJumlahKipasAngin.setBounds(432, 139, 51, 20);
+		textFieldJumlahKipasAngin.setBounds(399, 139, 51, 20);
 		paneltengahkondisi.add(textFieldJumlahKipasAngin);
 		
 		textFieldJumlahAC = new JTextField();
 		textFieldJumlahAC.setColumns(10);
 		textFieldJumlahAC.setBackground(new Color(255, 204, 51));
-		textFieldJumlahAC.setBounds(432, 170, 51, 20);
+		textFieldJumlahAC.setBounds(399, 170, 51, 20);
 		paneltengahkondisi.add(textFieldJumlahAC);
 		
 		textFieldJumlahCCTV = new JTextField();
 		textFieldJumlahCCTV.setColumns(10);
 		textFieldJumlahCCTV.setBackground(new Color(255, 204, 51));
-		textFieldJumlahCCTV.setBounds(432, 198, 51, 20);
+		textFieldJumlahCCTV.setBounds(399, 198, 51, 20);
 		paneltengahkondisi.add(textFieldJumlahCCTV);
 		
 		JTextPane txtpnKoneksi = new JTextPane();
@@ -395,56 +386,56 @@ public class GUI2 extends JFrame implements Serializable {
 		txtpnKoneksi.setFont(new Font("Tahoma", Font.BOLD, 11));
 		txtpnKoneksi.setEditable(false);
 		txtpnKoneksi.setBackground(new Color(204, 0, 0));
-		txtpnKoneksi.setBounds(631, 232, 101, 20);
+		txtpnKoneksi.setBounds(598, 232, 101, 20);
 		paneltengahkondisi.add(txtpnKoneksi);
 		
 		JComboBox comboBoxKondisiSteker = new JComboBox();
 		comboBoxKondisiSteker.setModel(new DefaultComboBoxModel(new String[] {"Baik", "Rusak", "Kurang Baik"}));
 		comboBoxKondisiSteker.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		comboBoxKondisiSteker.setBackground(Color.WHITE);
-		comboBoxKondisiSteker.setBounds(497, 41, 95, 20);
+		comboBoxKondisiSteker.setBounds(464, 41, 95, 20);
 		paneltengahkondisi.add(comboBoxKondisiSteker);
 		
 		JComboBox comboBoxKondisiLcd = new JComboBox();
 		comboBoxKondisiLcd.setModel(new DefaultComboBoxModel(new String[] {"Berfungsi", "Rusak"}));
 		comboBoxKondisiLcd.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		comboBoxKondisiLcd.setBackground(Color.WHITE);
-		comboBoxKondisiLcd.setBounds(497, 74, 95, 20);
+		comboBoxKondisiLcd.setBounds(464, 74, 95, 20);
 		paneltengahkondisi.add(comboBoxKondisiLcd);
 		
 		JComboBox comboBoxKondisiLampu = new JComboBox();
 		comboBoxKondisiLampu.setModel(new DefaultComboBoxModel(new String[] {"Baik 14", "Baik 18", "Baik 5"}));
 		comboBoxKondisiLampu.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		comboBoxKondisiLampu.setBackground(Color.WHITE);
-		comboBoxKondisiLampu.setBounds(497, 103, 95, 20);
+		comboBoxKondisiLampu.setBounds(464, 103, 95, 20);
 		paneltengahkondisi.add(comboBoxKondisiLampu);
 		
 		JComboBox comboBoxKondisiKipasAngin = new JComboBox();
 		comboBoxKondisiKipasAngin.setModel(new DefaultComboBoxModel(new String[] {"Rusak Semua", "Baik 1", "Baik 2"}));
 		comboBoxKondisiKipasAngin.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		comboBoxKondisiKipasAngin.setBackground(Color.WHITE);
-		comboBoxKondisiKipasAngin.setBounds(497, 139, 95, 20);
+		comboBoxKondisiKipasAngin.setBounds(464, 139, 95, 20);
 		paneltengahkondisi.add(comboBoxKondisiKipasAngin);
 		
 		JComboBox comboBoxKondisiAc = new JComboBox();
 		comboBoxKondisiAc.setModel(new DefaultComboBoxModel(new String[] {"Baik", "Rusak"}));
 		comboBoxKondisiAc.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		comboBoxKondisiAc.setBackground(Color.WHITE);
-		comboBoxKondisiAc.setBounds(497, 170, 95, 20);
+		comboBoxKondisiAc.setBounds(464, 170, 95, 20);
 		paneltengahkondisi.add(comboBoxKondisiAc);
 		
 		JComboBox comboBoxKondisiCCTV = new JComboBox();
 		comboBoxKondisiCCTV.setModel(new DefaultComboBoxModel(new String[] {"Rusak Semua", "Baik 2", "Baik 1"}));
 		comboBoxKondisiCCTV.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		comboBoxKondisiCCTV.setBackground(Color.WHITE);
-		comboBoxKondisiCCTV.setBounds(497, 198, 95, 20);
+		comboBoxKondisiCCTV.setBounds(464, 198, 95, 20);
 		paneltengahkondisi.add(comboBoxKondisiCCTV);
 		
 		JComboBox comboBoxHotspot = new JComboBox();
 		comboBoxHotspot.setModel(new DefaultComboBoxModel(new String[] {"UMM Hotspot", "UMM Hotspot Premiun", "Coro", "Speedy@instan"}));
 		comboBoxHotspot.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		comboBoxHotspot.setBackground(Color.WHITE);
-		comboBoxHotspot.setBounds(432, 260, 160, 20);
+		comboBoxHotspot.setBounds(399, 260, 160, 20);
 		paneltengahkondisi.add(comboBoxHotspot);
 		
 		JTextPane txtpnSsid = new JTextPane();
@@ -453,56 +444,56 @@ public class GUI2 extends JFrame implements Serializable {
 		txtpnSsid.setFont(new Font("Tahoma", Font.BOLD, 11));
 		txtpnSsid.setEditable(false);
 		txtpnSsid.setBackground(new Color(204, 0, 0));
-		txtpnSsid.setBounds(421, 232, 213, 20);
+		txtpnSsid.setBounds(388, 232, 213, 20);
 		paneltengahkondisi.add(txtpnSsid);
 		
 		JComboBox comboBoxLoginHotspot = new JComboBox();
 		comboBoxLoginHotspot.setModel(new DefaultComboBoxModel(new String[] {"Tdk Bisa", "Bisa"}));
 		comboBoxLoginHotspot.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		comboBoxLoginHotspot.setBackground(Color.WHITE);
-		comboBoxLoginHotspot.setBounds(609, 260, 123, 20);
+		comboBoxLoginHotspot.setBounds(576, 260, 123, 20);
 		paneltengahkondisi.add(comboBoxLoginHotspot);
 		
 		JComboBox comboBoxPosisiSteker = new JComboBox();
 		comboBoxPosisiSteker.setModel(new DefaultComboBoxModel(new String[] {"Pojok&DekatDosen", "DitengahRuang", "DekatPintu"}));
 		comboBoxPosisiSteker.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		comboBoxPosisiSteker.setBackground(Color.WHITE);
-		comboBoxPosisiSteker.setBounds(611, 41, 121, 20);
+		comboBoxPosisiSteker.setBounds(578, 41, 121, 20);
 		paneltengahkondisi.add(comboBoxPosisiSteker);
 		
 		JComboBox comboBoxPosisiKabelLcd = new JComboBox();
 		comboBoxPosisiKabelLcd.setModel(new DefaultComboBoxModel(new String[] {"DekatPintu", "DekatDosen", "DitengahRuang"}));
 		comboBoxPosisiKabelLcd.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		comboBoxPosisiKabelLcd.setBackground(Color.WHITE);
-		comboBoxPosisiKabelLcd.setBounds(611, 74, 121, 20);
+		comboBoxPosisiKabelLcd.setBounds(578, 74, 121, 20);
 		paneltengahkondisi.add(comboBoxPosisiKabelLcd);
 		
 		JComboBox comboBoxPosisiLampu = new JComboBox();
 		comboBoxPosisiLampu.setModel(new DefaultComboBoxModel(new String[] {"AtapRuangan", "DindingRuangan"}));
 		comboBoxPosisiLampu.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		comboBoxPosisiLampu.setBackground(Color.WHITE);
-		comboBoxPosisiLampu.setBounds(611, 103, 121, 20);
+		comboBoxPosisiLampu.setBounds(578, 103, 121, 20);
 		paneltengahkondisi.add(comboBoxPosisiLampu);
 		
 		JComboBox comboBoxPosisiKipasAngin = new JComboBox();
 		comboBoxPosisiKipasAngin.setModel(new DefaultComboBoxModel(new String[] {"DindingRuangan", "AtapRuangan"}));
 		comboBoxPosisiKipasAngin.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		comboBoxPosisiKipasAngin.setBackground(Color.WHITE);
-		comboBoxPosisiKipasAngin.setBounds(609, 139, 121, 20);
+		comboBoxPosisiKipasAngin.setBounds(576, 139, 121, 20);
 		paneltengahkondisi.add(comboBoxPosisiKipasAngin);
 		
 		JComboBox comboBoxPosisiAC = new JComboBox();
 		comboBoxPosisiAC.setModel(new DefaultComboBoxModel(new String[] {"Ditengah", "Dibelakang/Disamping"}));
 		comboBoxPosisiAC.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		comboBoxPosisiAC.setBackground(Color.WHITE);
-		comboBoxPosisiAC.setBounds(609, 170, 121, 20);
+		comboBoxPosisiAC.setBounds(576, 170, 121, 20);
 		paneltengahkondisi.add(comboBoxPosisiAC);
 		
 		JComboBox comboBoxPosisiCCTV = new JComboBox();
 		comboBoxPosisiCCTV.setModel(new DefaultComboBoxModel(new String[] {"Depan&Belakang", "Kiri&Kanan"}));
 		comboBoxPosisiCCTV.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		comboBoxPosisiCCTV.setBackground(Color.WHITE);
-		comboBoxPosisiCCTV.setBounds(611, 198, 121, 20);
+		comboBoxPosisiCCTV.setBounds(578, 198, 121, 20);
 		paneltengahkondisi.add(comboBoxPosisiCCTV);
 		
 		
@@ -511,7 +502,22 @@ public class GUI2 extends JFrame implements Serializable {
 		lblImage.setBounds(0, 0, 781, 410);
 		paneltengahkondisi.add(lblImage);
 		
-		JButton button_1 = new JButton(">");
+		Panel panelataskondisi = new Panel();
+		panelKondisi.add(panelataskondisi, BorderLayout.NORTH);
+		panelataskondisi.setBackground(new Color(0, 0, 102));
+		
+		JLabel lblInventarisKelas = new JLabel("Inventaris Kondisi");
+		lblInventarisKelas.setForeground(Color.WHITE);
+		lblInventarisKelas.setBackground(new Color(0, 0, 153));
+		lblInventarisKelas.setIcon(null);
+		panelataskondisi.add(lblInventarisKelas);
+		lblInventarisKelas.setFont(new Font("Algerian", Font.BOLD, 13));
+		
+		JPanel panelbawahkondisi = new JPanel();
+		panelKondisi.add(panelbawahkondisi, BorderLayout.SOUTH);
+		
+		JButton button_1 = new JButton("");
+		button_1.setIcon(new ImageIcon(GUI2.class.getResource("/as/left-28998_641.png")));
 		panelKondisi.add(button_1, BorderLayout.EAST);
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -526,6 +532,7 @@ public class GUI2 extends JFrame implements Serializable {
 		
 		
 		JButton btnLoad = new JButton("Load");
+		btnLoad.setIcon(new ImageIcon(GUI2.class.getResource("/as/load-md.png")));
 		btnLoad.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -572,6 +579,7 @@ public class GUI2 extends JFrame implements Serializable {
 		panelbawahkondisi.add(btnLoad, BorderLayout.EAST);
 		
 		JButton buttonAnalisis = new JButton("Analisis");
+		buttonAnalisis.setIcon(new ImageIcon(GUI2.class.getResource("/as/input-25064_640.png")));
 		buttonAnalisis.setForeground(Color.WHITE);
 		buttonAnalisis.setBackground(new Color(0, 0, 102));
 		buttonAnalisis.addActionListener(new ActionListener() {
@@ -618,6 +626,8 @@ public class GUI2 extends JFrame implements Serializable {
 
 					AnalisisKondisi an = new AnalisisKondisi();
 					an.setVisible(true);
+					new Diagram(kondisi.hitungSesuai(), kondisi.hitungTdkSesuai());
+					
 					
 				} catch (Exception e) {
 					JOptionPane.showMessageDialog(null, "input dengan benar : "+e, "Erorr", JOptionPane.ERROR_MESSAGE);
@@ -633,11 +643,13 @@ public class GUI2 extends JFrame implements Serializable {
 		setJMenuBar(menuBar);
 		
 		JMenu mnFile = new JMenu("File");
+		mnFile.setIcon(new ImageIcon(GUI2.class.getResource("/as/Card-file-icon.png")));
 		mnFile.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		mnFile.setForeground(Color.WHITE);
 		menuBar.add(mnFile);
 		
 		JMenuItem mntmLogout = new JMenuItem("LogOut");
+		mntmLogout.setIcon(new ImageIcon(GUI2.class.getResource("/as/logout.png")));
 		mntmLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
@@ -648,6 +660,7 @@ public class GUI2 extends JFrame implements Serializable {
 		mnFile.add(mntmLogout);
 		
 		JMenuItem mntmExit = new JMenuItem("Exit");
+		mntmExit.setIcon(new ImageIcon(GUI2.class.getResource("/as/logout (1).png")));
 		mntmExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
@@ -655,5 +668,56 @@ public class GUI2 extends JFrame implements Serializable {
 		});
 		mnFile.addSeparator();
 		mnFile.add(mntmExit);
+		
+		JMenu mnAuthors = new JMenu("Authors");
+		mnAuthors.setIcon(new ImageIcon(GUI2.class.getResource("/as/User.png")));
+		mnAuthors.setForeground(Color.WHITE);
+		menuBar.add(mnAuthors);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("Tri Fidrian Arya");
+		mntmNewMenuItem.setIcon(new ImageIcon(GUI2.class.getResource("/as/Messenger.png")));
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				try{
+					Desktop.getDesktop().browse(new URL("https://www.facebook.com/Tri.Fidrian.Arya").toURI());
+					   
+				}catch(Exception ex){
+					JOptionPane.showMessageDialog(null, "Gagal Membuka", "Error", JOptionPane.ERROR_MESSAGE);
+					}
+			}
+			
+		});
+		mnAuthors.add(mntmNewMenuItem);
+		
+		JMenuItem mntmFaridRamadan = new JMenuItem("Farid Ramadan");
+		mntmFaridRamadan.setIcon(new ImageIcon(GUI2.class.getResource("/as/Messenger.png")));
+		mntmFaridRamadan.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+			
+				try {
+					Desktop.getDesktop().browse(new URL("https://www.facebook.com/farid.cliquers.904?fref=ts").toURI());
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "Gagal Membuka", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+				
+			}
+		});
+		mnAuthors.add(mntmFaridRamadan);
+		
+		JMenuItem mntmAlfianNoorArafah = new JMenuItem("Alfian Noor Arafah");
+		mntmAlfianNoorArafah.setIcon(new ImageIcon(GUI2.class.getResource("/as/Messenger.png")));
+		mntmAlfianNoorArafah.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					Desktop.getDesktop().browse(new URL("https://www.facebook.com/alfiannoorarafah.arafah?fref=ts").toURI());
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "Gagal Membuka", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
+		mnAuthors.add(mntmAlfianNoorArafah);
 	}
 }
