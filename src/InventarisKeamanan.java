@@ -28,6 +28,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
+import java.io.File;
 import java.net.URL;
 
 import javax.swing.JMenu;
@@ -268,6 +269,7 @@ public class InventarisKeamanan extends JFrame {
 					JOptionPane.showMessageDialog(null, "Berhasil Membuat PDF", "Pemberitahuan", JOptionPane.INFORMATION_MESSAGE);
 					
 					new Pdf(kata, "DATA KEAMANAN RUANGAN.pdf");
+					Desktop.getDesktop().open(new File("DATA KEAMANAN RUANGAN.pdf"));
 				}catch (Exception e) {
 					JOptionPane.showMessageDialog(null, "Gagal Membuat PDF", "Error", JOptionPane.ERROR_MESSAGE);
 				}

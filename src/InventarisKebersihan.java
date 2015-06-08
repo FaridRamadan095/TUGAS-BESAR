@@ -28,6 +28,7 @@ import java.awt.event.ActionEvent;
 
 
 
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -35,6 +36,7 @@ import javax.swing.JToolBar;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 import java.net.URL;
 
 
@@ -569,6 +571,7 @@ public class InventarisKebersihan extends JFrame{
 					JOptionPane.showMessageDialog(null, "Berhasil Membuat PDF", "Pemberitahuan", JOptionPane.INFORMATION_MESSAGE);
 					
 					new Pdf(kata, "DATA KEBERSIHAN RUANGAN.pdf");
+					Desktop.getDesktop().open(new File("DATA KEBERSIHAN RUANGAN.pdf"));
 				}catch (Exception er) {
 					JOptionPane.showMessageDialog(null, "Gagal Membuat PDF", "Error", JOptionPane.ERROR_MESSAGE);
 				}

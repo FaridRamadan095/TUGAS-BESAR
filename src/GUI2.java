@@ -44,6 +44,7 @@ import javax.swing.JTextPane;
 import java.awt.color.CMMException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.Serializable;
@@ -756,6 +757,8 @@ public class GUI2 extends JFrame implements Serializable {
 					JOptionPane.showMessageDialog(null, "Berhasil Membuat PDF", "Pemberitahuan", JOptionPane.INFORMATION_MESSAGE);
 					
 					new Pdf(kata, "DATA KONDISI RUANGAN.pdf");
+					Desktop.getDesktop().open(new File("DATA KONDISI RUANGAN.pdf"));
+					
 				}catch (Exception e) {
 					JOptionPane.showMessageDialog(null, "Gagal Membuat PDF", "Error", JOptionPane.ERROR_MESSAGE);
 				}
