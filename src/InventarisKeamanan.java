@@ -305,6 +305,30 @@ public class InventarisKeamanan extends JFrame {
 		btnNewButton_1.setBackground(new Color(255, 102, 0));
 		paneBawah.add(btnNewButton_1, BorderLayout.EAST);
 		
+		JButton button_2 = new JButton("Menghapus Data yang Telah Tersimpan");
+		button_2.setIcon(new ImageIcon(GUI2.class.getResource("/as/edit-delete-icon.png")));
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			try {
+				BacaTulisFile.deleteObject("datakeamanan.dat");
+				
+				comboBoxkokoh.setSelectedItem(0);
+				comboBoxPintu.setSelectedItem(0);
+				comboBoxJendela.setSelectedItem(0);
+				comboBoxBahaya.setSelectedItem(0);
+				
+				JOptionPane.showMessageDialog(null, "Berhasil Delete","Pemberitahuan",JOptionPane.INFORMATION_MESSAGE);
+			} catch (Exception e2) {
+				JOptionPane.showMessageDialog(null, "Gagal Menghapus", "Error", JOptionPane.ERROR_MESSAGE);
+			}
+			
+			}
+		});
+		button_2.setForeground(Color.WHITE);
+		button_2.setFont(new Font("Tahoma", Font.BOLD, 11));
+		button_2.setBackground(Color.RED);
+		paneBawah.add(button_2, BorderLayout.SOUTH);
+		
 		JButton button = new JButton("");
 		button.setIcon(new ImageIcon(InventarisKeamanan.class.getResource("/as/left-28998_640.png")));
 		button.addActionListener(new ActionListener() {

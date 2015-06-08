@@ -29,6 +29,8 @@ import java.awt.event.ActionEvent;
 
 
 
+
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -663,6 +665,41 @@ public class InventarisKebersihan extends JFrame{
 			}
 		});
 		mnAuthors.add(mntmAlfianNoorArafah);
+		
+		JButton buttn = new JButton("Menghapus Data yang Telah Tersimpan");
+		buttn.setIcon(new ImageIcon(GUI2.class.getResource("/as/edit-delete-icon.png")));
+		buttn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			try {
+				BacaTulisFile.deleteObject("databersih.dat");
+				
+				comboBoxKondisiLantai.setSelectedIndex(0);
+				comboBoxKondisiDinding.setSelectedIndex(0);
+				comboBoxKondisiAtap.setSelectedIndex(0);
+				comboBoxKondisiPintu.setSelectedIndex(0);
+				comboBoxKondisiJendela.setSelectedIndex(0);
+				
+				comboBoxSirkulasiUdara.setSelectedIndex(0);
+				textFieldPencahayaan.setText("");
+				comboBoxKelembapan.setSelectedIndex(0);
+				textFieldSuhu.setText("");
+				comboBoxKebisingan.setSelectedIndex(0);
+				comboBoxBau.setSelectedIndex(0);
+				comboBoxKebocoran.setSelectedIndex(0);
+				comboBoxKerusakan.setSelectedIndex(0);
+				comboBoxKeausan.setSelectedIndex(0);
+				
+				JOptionPane.showMessageDialog(null, "Berhasil Delete","Pemberitahuan",JOptionPane.INFORMATION_MESSAGE);
+			} catch (Exception e2) {
+				JOptionPane.showMessageDialog(null, "Gagal Menghapus", "Error", JOptionPane.ERROR_MESSAGE);
+			}
+			
+			}
+		});
+		buttn.setForeground(Color.WHITE);
+		buttn.setFont(new Font("Tahoma", Font.BOLD, 11));
+		buttn.setBackground(Color.RED);
+		panelbawah.add(buttn, BorderLayout.SOUTH);
 
 	}
 }

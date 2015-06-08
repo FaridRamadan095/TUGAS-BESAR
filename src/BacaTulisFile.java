@@ -81,4 +81,15 @@ public class BacaTulisFile {
 		
 		return dat;
 	}	
+	
+	public static void deleteObject(String dat){
+		try {
+			File data = new File(dat);
+			data.delete();
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, e);
+		}
+		
+	}
+	
 }

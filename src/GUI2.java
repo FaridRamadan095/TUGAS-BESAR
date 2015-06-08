@@ -49,6 +49,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.Serializable;
 import java.net.URL;
+import java.util.ArrayList;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -84,8 +85,6 @@ public class GUI2 extends JFrame implements Serializable {
 	private KebersihanRuangKelas bersih;
 	private KeamananRuangKelas keamanan;
 	
-	private BacaTulisFile bacatulis;
-
 	private JTable table;
 	private JTextField textFieldJumlahSteker;
 	private JTextField textFieldJumlahLcd;
@@ -611,9 +610,14 @@ public class GUI2 extends JFrame implements Serializable {
 		panelKondisi.add(button_1, BorderLayout.EAST);
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				InventarisKebersihan invber = new InventarisKebersihan();
-				invber.setVisible(true);
-				dispose();
+				try {
+					InventarisKebersihan invber = new InventarisKebersihan();
+					invber.setVisible(true);
+					dispose();
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "Isi Data!!!", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+				
 			}
 		});
 		button_1.setForeground(Color.WHITE);
@@ -738,7 +742,7 @@ public class GUI2 extends JFrame implements Serializable {
 				try {
 					JumlahKondisidanPosisiSarana kondisi = GUI2.this.kondisi;
 					String kata ="Data Kondisi Ruang Kelas\n" 
-							+"luas ruang ini adalah "+ kondisi.hitungLuasRuang(kondisi.getPanjangRuang(), kondisi.getLebarRuang())+"\n"
+							+ "luas ruang ini adalah "+ kondisi.hitungLuasRuang(kondisi.getPanjangRuang(), kondisi.getLebarRuang())+"\n"
 							+ "bentuk ruang adalah tidak sesuai"+kondisi.hitungBentukRuang(kondisi.getPanjangRuang(), kondisi.getLebarRuang())+"\n"
 							+ "rasio luas "+kondisi.hitungRasioLuas(kondisi.hitungLuasRuang(kondisi.getPanjangRuang(), kondisi.getLebarRuang()), kondisi.getJumlahKursi())+"\n"
 							+ "pintu dan jendela "+kondisi.analisisPintuJendela(kondisi.getJumlahPintu(), kondisi.getJumlahJendela())+"\n"
@@ -766,5 +770,51 @@ public class GUI2 extends JFrame implements Serializable {
 			}
 		});
 		panelbawahkondisi.add(btnCreatePdf, BorderLayout.WEST);
+		
+		JButton btnNewButton = new JButton("Menghapus Data yang Telah Tersimpan");
+		btnNewButton.setIcon(new ImageIcon(GUI2.class.getResource("/as/edit-delete-icon.png")));
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnNewButton.setBackground(Color.RED);
+		btnNewButton.setForeground(Color.WHITE);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					BacaTulisFile.deleteObject("datakondisi.dat");
+					textFieldNamaRuang.setText("");
+					comboBoxLokasi.setSelectedIndex(0);
+					comboBoxFakultas.setSelectedIndex(0);
+					textFieldPanjang.setText("");
+					textFieldLebar.setText("");
+					textFieldJumlahKursi.setText("");
+					textFieldJumlahPintu.setText("");
+					textFieldJumlahJendela.setText("");
+					textFieldJumlahSteker.setText("");
+					comboBoxKondisiSteker.setSelectedIndex(0);
+					comboBoxPosisiSteker.setSelectedIndex(0);
+					textFieldJumlahLcd.setText("");
+					comboBoxKondisiLcd.setSelectedIndex(0);
+					comboBoxPosisiKabelLcd.setSelectedIndex(0);
+					textFieldJumlahLampu.setText("");
+					comboBoxKondisiLampu.setSelectedIndex(0);
+					comboBoxPosisiLampu.setSelectedIndex(0);
+					textFieldJumlahKipasAngin.setText("");
+					comboBoxKondisiKipasAngin.setSelectedIndex(0);
+					comboBoxPosisiKipasAngin.setSelectedIndex(0);
+					textFieldJumlahAC.setText("");
+					comboBoxKondisiAc.setSelectedIndex(0);
+					comboBoxPosisiAC.setSelectedIndex(0);
+					comboBoxHotspot.setSelectedIndex(0);
+					comboBoxLoginHotspot.setSelectedIndex(0);
+					textFieldJumlahCCTV.setText("");
+					comboBoxKondisiCCTV.setSelectedIndex(0);
+					
+					JOptionPane.showMessageDialog(null, "Berhasil Delete","Pemberitahuan",JOptionPane.INFORMATION_MESSAGE);
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "Gagal Menghapus", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+				
+			}
+		});
+		panelbawahkondisi.add(btnNewButton, BorderLayout.SOUTH);
 	}
 }
