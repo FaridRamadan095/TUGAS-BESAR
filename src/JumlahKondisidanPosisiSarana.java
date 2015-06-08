@@ -1,4 +1,6 @@
-public class JumlahKondisidanPosisiSarana {
+import java.io.Serializable;
+
+public class JumlahKondisidanPosisiSarana extends KondisiRuangKelas implements hitung, Serializable{
 	private int jumlahStopkontak;
 	private int kondisiStopKontak;
 	private int posisiStopKontak;
@@ -20,6 +22,61 @@ public class JumlahKondisidanPosisiSarana {
 	private int kondisiCctv;
 	private int posisiCctv;
 	
+	
+
+	
+	private int sesuai=0;
+	private int tdksesuai=0;
+	
+
+	public JumlahKondisidanPosisiSarana(){
+		
+	}
+
+	public JumlahKondisidanPosisiSarana(String namaRuang, String lokasiRuang,
+			String Fakultas) {
+		super(namaRuang, lokasiRuang, Fakultas);
+		
+	}
+	
+	public JumlahKondisidanPosisiSarana(String namaRuang, String lokasiRuang,
+			String Fakultas, int panjangRuang, int lebarRuang, int jumlahKursi,
+			int jumlahPintu, int jumlahJendela) {
+		super(namaRuang, lokasiRuang, Fakultas, panjangRuang, lebarRuang, jumlahKursi,
+				jumlahPintu, jumlahJendela);
+	
+	}
+	
+	public JumlahKondisidanPosisiSarana(String namaRuang, String lokasiRuang,
+			String Fakultas, int jumlahStopkontak, int kondisiStopKontak,
+			int posisiStopKontak, int jumlahKabelLcd, int kondisiKabelLcd,
+			int posisiKabelLcd, int jumlahLampu, int kondisiLampu,
+			int posisiLampu, int jumlahKipasAngin, int kondisiKipasAngin,
+			int posisiKipasAngin, int jumlahAc, int kondisiAc, int posisiAc,
+			int SSID, int inputBandwidth, int jumlahCctv, int kondisiCctv,
+			int posisiCctv) {
+		super(namaRuang, lokasiRuang, Fakultas);
+		this.jumlahStopkontak = jumlahStopkontak;
+		this.kondisiStopKontak = kondisiStopKontak;
+		this.posisiStopKontak = posisiStopKontak;
+		this.jumlahKabelLcd = jumlahKabelLcd;
+		this.kondisiKabelLcd = kondisiKabelLcd;
+		this.posisiKabelLcd = posisiKabelLcd;
+		this.jumlahLampu = jumlahLampu;
+		this.kondisiLampu = kondisiLampu;
+		this.posisiLampu = posisiLampu;
+		this.jumlahKipasAngin = jumlahKipasAngin;
+		this.kondisiKipasAngin = kondisiKipasAngin;
+		this.posisiKipasAngin = posisiKipasAngin;
+		this.jumlahAc = jumlahAc;
+		this.kondisiAc = kondisiAc;
+		this.posisiAc = posisiAc;
+		this.SSID = SSID;
+		this.inputBandwidth = inputBandwidth;
+		this.jumlahCctv = jumlahCctv;
+		this.kondisiCctv = kondisiCctv;
+		this.posisiCctv = posisiCctv;
+	}
 	public int getJumlahStopkontak() {
 		return jumlahStopkontak;
 	}
@@ -113,8 +170,8 @@ public class JumlahKondisidanPosisiSarana {
 	public int getSSID() {
 		return SSID;
 	}
-	public void setSSID(int sSID) {
-		SSID = sSID;
+	public void setSSID(int SSID) {
+		this.SSID = SSID;
 	}
 	public int getInputBandwidth() {
 		return inputBandwidth;
@@ -141,8 +198,8 @@ public class JumlahKondisidanPosisiSarana {
 		this.posisiCctv = posisiCctv;
 	}
 	
-	String analisisListrik(int steker, int kondisi, int posisi){
-		if(steker >= 4 && kondisi==1 && posisi==1){
+	public String analisisListrik(int steker, int kondisi, int posisi){
+		if(steker >= 4 && kondisi==0 && posisi==0){
 			return "sesuai";
 		}
 		else{
@@ -150,8 +207,8 @@ public class JumlahKondisidanPosisiSarana {
 		}
 	}
 	
-	String analisisLcd(int kabel,  int kondisi, int posisi){
-		if(kabel >= 1 && kondisi==2 && posisi==1){
+	public String analisisLcd(int kabel,  int kondisi, int posisi){
+		if(kabel >= 1 && kondisi==0 && posisi==1){
 			return "sesuai";
 		}
 		else{
@@ -159,8 +216,8 @@ public class JumlahKondisidanPosisiSarana {
 		}
 	}
 	
-	String analisisLampu(int lampu, int posisi, int kondisi){
-		if(lampu >= 18 && kondisi==2 && posisi==1){
+	public String analisisLampu(int lampu, int kondisi, int posisi){
+		if(lampu >= 18 && kondisi==1 && posisi==0){
 			return "sesuai";
 		}
 		else{
@@ -168,8 +225,8 @@ public class JumlahKondisidanPosisiSarana {
 		}
 	}
 	
-	String analisiKipasAngin(int kipas, int posisi, int kondisi){
-		if(kipas >= 2 && kondisi==3&& posisi==2){
+	public String analisiKipasAngin(int kipas, int kondisi, int posisi){
+		if(kipas >= 2 && kondisi==2&& posisi==1){
 			return "sesuai";
 		}
 		else{
@@ -177,8 +234,8 @@ public class JumlahKondisidanPosisiSarana {
 		}
 	}
 	
-	String analisiAc(int ac, int kondisi, int posisi){
-		if(ac >= 1 && kondisi==1&& posisi==2){
+	public String analisiAc(int ac, int kondisi, int posisi){
+		if(ac >= 1 && kondisi==0 && posisi==1){
 			return "sesuai";
 		}
 		else{
@@ -186,8 +243,8 @@ public class JumlahKondisidanPosisiSarana {
 		}
 	}
 	
-	String analisiInterner(int SSID, int login){
-		if(SSID==1 && login==2){
+	public String analisiInterner(int SSID, int login){
+		if(SSID==0 && login==1){
 			return "sesuai";
 		}
 			else{
@@ -195,12 +252,80 @@ public class JumlahKondisidanPosisiSarana {
 			}
 	}
 	
-	String analisiCctv(int cctv, int kondisi, int posisi){
-		if(cctv >= 2 && kondisi==2 && posisi==1){
+	public String analisiCctv(int cctv, int kondisi, int posisi){
+		if(cctv >= 2 && kondisi==1 && posisi==0){
 			return "sesuai";
 		}
 		else{
 			return "tidak sesuai";
 		}
+	}
+	@Override
+	public String deskripsiKelas() {
+		if(sesuai > tdksesuai){
+			return "Inventaris Kondisi Memenuhi Standar";
+		}
+		else{
+			return "Inventaris Kondisi Kurang Memenuhi Standar";
+		}
+	}
+	@Override
+	public int hitungSesuai() {
+		if("sesuai".equals(hitungBentukRuang(getPanjangRuang(),getLebarRuang()))){
+			++sesuai;
+		}else{
+			++tdksesuai;
+		}	
+		if("sesuai".equals(hitungRasioLuas(hitungLuasRuang(getPanjangRuang(), getLebarRuang()), getJumlahKursi()))){
+			++sesuai;
+		}else{
+			++tdksesuai;
+		}
+		if("sesuai".equals(analisisPintuJendela(getJumlahPintu(), getJumlahJendela()))){
+			++sesuai;
+		}else{
+			++tdksesuai;
+		}
+		if("sesuai".equals(analisisListrik(getJumlahStopkontak(), getKondisiStopKontak(), getPosisiStopKontak()))){
+			++sesuai;
+		}else{
+			++tdksesuai;
+		}
+		if("sesuai".equals(analisisLcd(getJumlahKabelLcd(), getKondisiKabelLcd(), getPosisiKabelLcd()))){
+			++sesuai;
+		}else{
+			++tdksesuai;
+		}
+		if("sesuai".equals(analisisLampu(getJumlahLampu(), getKondisiLampu(), getPosisiLampu()))){
+			++sesuai;
+		}else{
+			++tdksesuai;
+		}
+		if("sesuai".equals(analisiKipasAngin(getJumlahKipasAngin(), getKondisiKipasAngin(), getPosisiKipasAngin()))){
+			++sesuai;
+		}else{
+			++tdksesuai;
+		}
+		if("sesuai".equals(analisiAc(getJumlahAc(), getKondisiAc(), getPosisiAc()))){
+			++sesuai;
+		}else{
+			++tdksesuai;
+		}
+		if("sesuai".equals(analisiInterner(getSSID(), getInputBandwidth()))){
+			++sesuai;
+		}else{
+			++tdksesuai;
+		}
+		if("sesuai".equals(analisiCctv(getJumlahCctv(), getKondisiCctv(), getPosisiCctv()))){
+			++sesuai;
+		}else{
+			++tdksesuai;
+		}
+		return sesuai;
+	}
+	@Override
+	public int hitungTdkSesuai() {
+		// TODO Auto-generated method stub
+		return tdksesuai;
 	}
 }

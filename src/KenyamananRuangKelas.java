@@ -1,5 +1,7 @@
+import java.io.Serializable;
 
-public class KenyamananRuangKelas {
+
+public abstract class KenyamananRuangKelas extends LingkunganRuangKelas implements Serializable {
 	private int kebisingan;
 	private int bau;
 	private int kebocoran;
@@ -7,6 +9,38 @@ public class KenyamananRuangKelas {
 	private int keausan;
 	
 
+	public KenyamananRuangKelas(){
+		
+	}
+	
+	public KenyamananRuangKelas(String namaRuang, String lokasiRuang,
+			String Fakultas, String kondisiLantai, String kondisiDinding,
+			String kondisiAtap, String kondisiPintu, String kondisiJendela) {
+		super(namaRuang, lokasiRuang, Fakultas, kondisiLantai, kondisiDinding,
+				kondisiAtap, kondisiPintu, kondisiJendela);
+		// TODO Auto-generated constructor stub
+	}
+	public KenyamananRuangKelas(String namaRuang, String lokasiRuang,
+			String Fakultas) {
+		super(namaRuang, lokasiRuang, Fakultas);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	public KenyamananRuangKelas(String namaRuang, String lokasiRuang,
+			String Fakultas, int kebisingan, int bau, int kebocoran,
+			int kerusakan, int keausan) {
+		super(namaRuang, lokasiRuang, Fakultas);
+		this.kebisingan = kebisingan;
+		this.bau = bau;
+		this.kebocoran = kebocoran;
+		this.kerusakan = kerusakan;
+		this.keausan = keausan;
+	}
+	
+	
+	
+	
 	public int getKebisingan() {
 		return kebisingan;
 	}
@@ -38,7 +72,7 @@ public class KenyamananRuangKelas {
 		this.keausan = keausan;
 	}
 	String analisisKebisingan(int bising){
-		if(bising==1){
+		if(bising==0){
 			return "sesuai";
 			}
 			else{
@@ -46,7 +80,7 @@ public class KenyamananRuangKelas {
 			}
 	}
 	String analisisBau(int bau){
-		if(bau==2){
+		if(bau==1){
 			return "sesuai";
 			}
 			else{
@@ -54,7 +88,7 @@ public class KenyamananRuangKelas {
 			}
 	}
 	String analisisKebocoran(int bocor){
-		if(bocor==2){
+		if(bocor==1){
 			return "sesuai";
 			}
 			else{
@@ -62,7 +96,7 @@ public class KenyamananRuangKelas {
 			}
 	}
 	String analisisKerusakan(int rusak){
-		if(rusak==1){
+		if(rusak==0){
 			return "sesuai";
 			}
 			else{
@@ -70,7 +104,7 @@ public class KenyamananRuangKelas {
 			}
 	}
 	String analisisKeausan(int aus){
-		if(aus==2){
+		if(aus==1){
 			return "sesuai";
 			}
 			else{
