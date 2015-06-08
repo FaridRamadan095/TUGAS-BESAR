@@ -44,6 +44,8 @@ import javax.swing.JTextPane;
 import java.awt.color.CMMException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.Serializable;
 import java.net.URL;
 
@@ -52,6 +54,11 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.ListSelectionModel;
 
 import org.omg.CORBA.ExceptionList;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 
 import javax.swing.JTabbedPane;
 import javax.swing.JMenuBar;
@@ -118,6 +125,88 @@ public class GUI2 extends JFrame implements Serializable {
 		setBounds(100, 100, 797, 500);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(new BorderLayout(0, 0));
+		
+		JMenuBar menuBar = new JMenuBar();
+		getContentPane().add(menuBar, BorderLayout.NORTH);
+		menuBar.setBackground(new Color(204, 0, 0));
+		
+		JMenu mnFile = new JMenu("File");
+		mnFile.setIcon(new ImageIcon(GUI2.class.getResource("/as/Card-file-icon.png")));
+		mnFile.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		mnFile.setForeground(Color.WHITE);
+		menuBar.add(mnFile);
+		
+		JMenuItem mntmLogout = new JMenuItem("LogOut");
+		mntmLogout.setIcon(new ImageIcon(GUI2.class.getResource("/as/logout.png")));
+		mntmLogout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				Login log = new Login();
+				log.setVisible(true);
+			}
+		});
+		mnFile.add(mntmLogout);
+		
+		JMenuItem mntmExit = new JMenuItem("Exit");
+		mntmExit.setIcon(new ImageIcon(GUI2.class.getResource("/as/logout (1).png")));
+		mntmExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+			}
+		});
+		mnFile.addSeparator();
+		mnFile.add(mntmExit);
+		
+		JMenu mnAuthors = new JMenu("Authors");
+		mnAuthors.setIcon(new ImageIcon(GUI2.class.getResource("/as/User.png")));
+		mnAuthors.setForeground(Color.WHITE);
+		menuBar.add(mnAuthors);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("Tri Fidrian Arya");
+		mntmNewMenuItem.setIcon(new ImageIcon(GUI2.class.getResource("/as/Messenger.png")));
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				try{
+					Desktop.getDesktop().browse(new URL("https://www.facebook.com/Tri.Fidrian.Arya").toURI());
+					   
+				}catch(Exception ex){
+					JOptionPane.showMessageDialog(null, "Gagal Membuka", "Error", JOptionPane.ERROR_MESSAGE);
+					}
+			}
+			
+		});
+		mnAuthors.add(mntmNewMenuItem);
+		
+		JMenuItem mntmFaridRamadan = new JMenuItem("Farid Ramadan");
+		mntmFaridRamadan.setIcon(new ImageIcon(GUI2.class.getResource("/as/Messenger.png")));
+		mntmFaridRamadan.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+			
+				try {
+					Desktop.getDesktop().browse(new URL("https://www.facebook.com/farid.cliquers.904?fref=ts").toURI());
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "Gagal Membuka", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+				
+			}
+		});
+		mnAuthors.add(mntmFaridRamadan);
+		
+		JMenuItem mntmAlfianNoorArafah = new JMenuItem("Alfian Noor Arafah");
+		mntmAlfianNoorArafah.setIcon(new ImageIcon(GUI2.class.getResource("/as/Messenger.png")));
+		mntmAlfianNoorArafah.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					Desktop.getDesktop().browse(new URL("https://www.facebook.com/alfiannoorarafah.arafah?fref=ts").toURI());
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "Gagal Membuka", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
+		mnAuthors.add(mntmAlfianNoorArafah);
 		
 		JPanel panelKondisi = new JPanel();
 		getContentPane().add(panelKondisi, BorderLayout.CENTER);
@@ -638,86 +727,41 @@ public class GUI2 extends JFrame implements Serializable {
 		});
 		panelbawahkondisi.add(buttonAnalisis, BorderLayout.CENTER);
 		
-		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBackground(new Color(204, 0, 0));
-		setJMenuBar(menuBar);
-		
-		JMenu mnFile = new JMenu("File");
-		mnFile.setIcon(new ImageIcon(GUI2.class.getResource("/as/Card-file-icon.png")));
-		mnFile.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		mnFile.setForeground(Color.WHITE);
-		menuBar.add(mnFile);
-		
-		JMenuItem mntmLogout = new JMenuItem("LogOut");
-		mntmLogout.setIcon(new ImageIcon(GUI2.class.getResource("/as/logout.png")));
-		mntmLogout.addActionListener(new ActionListener() {
+		JButton btnCreatePdf = new JButton("Create PDF");
+		btnCreatePdf.setIcon(new ImageIcon(GUI2.class.getResource("/as/pdf-icon.png")));
+		btnCreatePdf.setForeground(Color.WHITE);
+		btnCreatePdf.setBackground(new Color(0, 0, 102));
+		btnCreatePdf.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				dispose();
-				Login log = new Login();
-				log.setVisible(true);
-			}
-		});
-		mnFile.add(mntmLogout);
-		
-		JMenuItem mntmExit = new JMenuItem("Exit");
-		mntmExit.setIcon(new ImageIcon(GUI2.class.getResource("/as/logout (1).png")));
-		mntmExit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				dispose();
-			}
-		});
-		mnFile.addSeparator();
-		mnFile.add(mntmExit);
-		
-		JMenu mnAuthors = new JMenu("Authors");
-		mnAuthors.setIcon(new ImageIcon(GUI2.class.getResource("/as/User.png")));
-		mnAuthors.setForeground(Color.WHITE);
-		menuBar.add(mnAuthors);
-		
-		JMenuItem mntmNewMenuItem = new JMenuItem("Tri Fidrian Arya");
-		mntmNewMenuItem.setIcon(new ImageIcon(GUI2.class.getResource("/as/Messenger.png")));
-		mntmNewMenuItem.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				try{
-					Desktop.getDesktop().browse(new URL("https://www.facebook.com/Tri.Fidrian.Arya").toURI());
-					   
-				}catch(Exception ex){
-					JOptionPane.showMessageDialog(null, "Gagal Membuka", "Error", JOptionPane.ERROR_MESSAGE);
-					}
-			}
-			
-		});
-		mnAuthors.add(mntmNewMenuItem);
-		
-		JMenuItem mntmFaridRamadan = new JMenuItem("Farid Ramadan");
-		mntmFaridRamadan.setIcon(new ImageIcon(GUI2.class.getResource("/as/Messenger.png")));
-		mntmFaridRamadan.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-			
+				
 				try {
-					Desktop.getDesktop().browse(new URL("https://www.facebook.com/farid.cliquers.904?fref=ts").toURI());
-				} catch (Exception e2) {
-					JOptionPane.showMessageDialog(null, "Gagal Membuka", "Error", JOptionPane.ERROR_MESSAGE);
+					JumlahKondisidanPosisiSarana kondisi = GUI2.this.kondisi;
+					String kata ="Data Kondisi Ruang Kelas\n" 
+							+"luas ruang ini adalah "+ kondisi.hitungLuasRuang(kondisi.getPanjangRuang(), kondisi.getLebarRuang())+"\n"
+							+ "bentuk ruang adalah tidak sesuai"+kondisi.hitungBentukRuang(kondisi.getPanjangRuang(), kondisi.getLebarRuang())+"\n"
+							+ "rasio luas "+kondisi.hitungRasioLuas(kondisi.hitungLuasRuang(kondisi.getPanjangRuang(), kondisi.getLebarRuang()), kondisi.getJumlahKursi())+"\n"
+							+ "pintu dan jendela "+kondisi.analisisPintuJendela(kondisi.getJumlahPintu(), kondisi.getJumlahJendela())+"\n"
+							+ "analisis kelistrikan "+kondisi.analisisListrik(kondisi.getJumlahStopkontak(), kondisi.getKondisiStopKontak(), kondisi.getPosisiStopKontak())+"\n"
+							+ "analisis Lcd "+kondisi.analisisLcd(kondisi.getJumlahKabelLcd(), kondisi.getKondisiKabelLcd(), kondisi.getPosisiKabelLcd())+"\n"
+							+ "analisis Lampu "+kondisi.analisisLampu(kondisi.getJumlahLampu(), kondisi.getKondisiLampu(), kondisi.getPosisiLampu())+"\n"
+							+ "analisis kipas angin "+kondisi.analisiKipasAngin(kondisi.getJumlahKipasAngin(), kondisi.getKondisiKipasAngin(), kondisi.getPosisiKipasAngin())+"\n"
+							+ "analisis AC "+kondisi.analisiAc(kondisi.getJumlahAc(), kondisi.getKondisiAc(), kondisi.getPosisiAc())+"\n"
+							+ "analisis internet "+kondisi.analisiInterner(kondisi.getSSID(), kondisi.getInputBandwidth())+"\n"
+							+ "analisis Cctv "+kondisi.analisiCctv(kondisi.getJumlahCctv(), kondisi.getKondisiCctv(), kondisi.getPosisiCctv())+"\n"
+							+ "\n"
+							+ "Inventaris Tentang Keamanan yang sesuai : "+kondisi.hitungSesuai()+"\n"
+							+ "Inventaris Tentang Keamanan yang Tidak Sesuai : "+kondisi.hitungTdkSesuai()+"\n"
+							+ "Deskripsi Kelas : "+kondisi.deskripsiKelas();
+					
+					JOptionPane.showMessageDialog(null, "Berhasil Membuat PDF", "Pemberitahuan", JOptionPane.INFORMATION_MESSAGE);
+					
+					new Pdf(kata, "DATA KONDISI RUANGAN.pdf");
+				}catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "Gagal Membuat PDF", "Error", JOptionPane.ERROR_MESSAGE);
 				}
 				
 			}
 		});
-		mnAuthors.add(mntmFaridRamadan);
-		
-		JMenuItem mntmAlfianNoorArafah = new JMenuItem("Alfian Noor Arafah");
-		mntmAlfianNoorArafah.setIcon(new ImageIcon(GUI2.class.getResource("/as/Messenger.png")));
-		mntmAlfianNoorArafah.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				try {
-					Desktop.getDesktop().browse(new URL("https://www.facebook.com/alfiannoorarafah.arafah?fref=ts").toURI());
-				} catch (Exception e2) {
-					JOptionPane.showMessageDialog(null, "Gagal Membuka", "Error", JOptionPane.ERROR_MESSAGE);
-				}
-			}
-		});
-		mnAuthors.add(mntmAlfianNoorArafah);
+		panelbawahkondisi.add(btnCreatePdf, BorderLayout.WEST);
 	}
 }

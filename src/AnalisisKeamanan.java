@@ -67,7 +67,6 @@ public class AnalisisKeamanan extends JFrame {
 		String[] kolom = {"Analisis","Hasil"};
 		String[][] data = {
 				{"Kekokohan",keamanan.analisisKekokohan(keamanan.getKekokohan())},
-				{"Kekokohan",keamanan.analisisKeamananRuang(keamanan.getKekokohan())},
 				{"Kunci Pintu & Kunci Jendela",keamanan.analisisKunciPintuJendela(keamanan.getKunciPintu(), keamanan.getKunciJendela())},
 				{"Bahaya",keamanan.analisisKeamananRuang(keamanan.getBahaya())},
 

@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -23,6 +24,8 @@ public class Diagram extends JFrame {
 	     cf.setSize(600,600);
 	     cf.setVisible(true);
 	     cf.setLocationRelativeTo(null);
+	     cf.setBackground(Color.BLUE);
+	     cf.setForeground(Color.BLUE);
 	
 	}
 

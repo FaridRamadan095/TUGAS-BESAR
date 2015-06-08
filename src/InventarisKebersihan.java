@@ -27,6 +27,7 @@ import java.awt.event.ActionEvent;
 
 
 
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -543,6 +544,40 @@ public class InventarisKebersihan extends JFrame{
 		btnLoad.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnLoad.setBackground(new Color(153, 0, 0));
 		panelbawah.add(btnLoad, BorderLayout.EAST);
+		
+		JButton button_2 = new JButton("Create PDF");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					KebersihanRuangKelas bersih = InventarisKebersihan.this.bersih;
+					String kata ="Data Kebersihan Ruang Kelas\n" 
+							+"Kebersihan "+bersih.analisisKebersihan(bersih.getKondisiLantai(), bersih.getKondisiDinding(), bersih.getKondisiAtap(), bersih.getKondisiPintu(), bersih.getKondisiJendela())+"\n"
+							+"analisis sirkulasi udara "+bersih.analisisSirkulasiUdara(bersih.getSirkulasiUdara())+"\n"
+							+"analisis pencahayaan "+bersih.analisisPencahayaan(bersih.getNilaiPencahayaan())+"\n"
+							+"analisis kelembapan "+bersih.analisisKelembapan(bersih.getInputKelembapan())+"\n"
+							+"analisis suhu "+bersih.analisisSuhu(bersih.getInputSuhu())+"\n"
+							+"analisis kebisingan "+bersih.analisisKebisingan(bersih.getKebisingan())+"\n"
+							+"analisis bau "+bersih.analisisBau(bersih.getBau())+"\n"
+							+"analisis kebocoran "+bersih.analisisKebocoran(bersih.getKebocoran())+"\n"
+							+"analisis kerusakan "+bersih.analisisKerusakan(bersih.getKerusakan())+"\n"
+							+"analisis keausan "+bersih.analisisKeausan(bersih.getKeausan())+"\n"						
+							+ "\n"
+							+ "Inventaris Tentang Keamanan yang sesuai : "+bersih.hitungSesuai()+"\n"
+							+ "Inventaris Tentang Keamanan yang Tidak Sesuai : "+bersih.hitungTdkSesuai()+"\n"
+							+ "Deskripsi Kelas : "+bersih.deskripsiKelas();
+					
+					JOptionPane.showMessageDialog(null, "Berhasil Membuat PDF", "Pemberitahuan", JOptionPane.INFORMATION_MESSAGE);
+					
+					new Pdf(kata, "DATA KEBERSIHAN RUANGAN.pdf");
+				}catch (Exception er) {
+					JOptionPane.showMessageDialog(null, "Gagal Membuat PDF", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
+		button_2.setIcon(new ImageIcon(InventarisKebersihan.class.getResource("/as/pdf-icon.png")));
+		button_2.setForeground(Color.WHITE);
+		button_2.setBackground(new Color(153, 0, 0));
+		panelbawah.add(button_2, BorderLayout.WEST);
 		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(new Color(204, 0, 0));

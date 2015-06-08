@@ -46,10 +46,6 @@ public class JumlahKondisidanPosisiSarana extends KondisiRuangKelas implements h
 				jumlahPintu, jumlahJendela);
 	
 	}
-
-	
-	
-	
 	
 	public JumlahKondisidanPosisiSarana(String namaRuang, String lokasiRuang,
 			String Fakultas, int jumlahStopkontak, int kondisiStopKontak,

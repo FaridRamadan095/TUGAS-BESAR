@@ -14,5 +14,14 @@
 	<classpathentry kind="lib" path="C:/Users/Henri Vixz/Downloads/Compressed/jfreechart-1.0.19/lib/orsonpdf-1.6-eval.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Henri Vixz/Downloads/Compressed/jfreechart-1.0.19/lib/servlet.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Henri Vixz/Downloads/Compressed/jfreechart-1.0.19/lib/swtgraphics2d.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Henri Vixz/Downloads/Compressed/itext-5.5.6/itextpdf-5.5.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Henri Vixz/Downloads/Compressed/itext-5.5.6/itextpdf-5.5.6-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Henri Vixz/Downloads/Compressed/itext-5.5.6/itextpdf-5.5.6-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Henri Vixz/Downloads/Compressed/itext-5.5.6/itext-pdfa-5.5.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Henri Vixz/Downloads/Compressed/itext-5.5.6/itext-pdfa-5.5.6-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Henri Vixz/Downloads/Compressed/itext-5.5.6/itext-pdfa-5.5.6-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Henri Vixz/Downloads/Compressed/itext-5.5.6/itext-xtra-5.5.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Henri Vixz/Downloads/Compressed/itext-5.5.6/itext-xtra-5.5.6-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Henri Vixz/Downloads/Compressed/itext-5.5.6/itext-xtra-5.5.6-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

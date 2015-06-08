@@ -250,6 +250,33 @@ public class InventarisKeamanan extends JFrame {
 				
 			}
 		});
+		
+		JButton button_1 = new JButton("Create PDF");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					KeamananRuangKelas keamanan = InventarisKeamanan.this.keamanan;
+					String kata ="Data Keamanan Ruang Kelas\n" 
+							+"Kekokohan "+keamanan.analisisKekokohan(keamanan.getKekokohan())+"\n"
+							+"Analisis Kunci Pintu dan Jendela "+keamanan.analisisKunciPintuJendela(keamanan.getKunciPintu(), keamanan.getKunciJendela())+"\n"
+							+"Analisis Keamanan Ruang "+keamanan.analisisKeamananRuang(keamanan.getBahaya())+"\n"							
+							+ "\n"
+							+ "Inventaris Tentang Keamanan yang sesuai : "+keamanan.hitungSesuai()+"\n"
+							+ "Inventaris Tentang Keamanan yang Tidak Sesuai : "+keamanan.hitungTdkSesuai()+"\n"
+							+ "Deskripsi Kelas : "+keamanan.deskripsiKelas();
+					
+					JOptionPane.showMessageDialog(null, "Berhasil Membuat PDF", "Pemberitahuan", JOptionPane.INFORMATION_MESSAGE);
+					
+					new Pdf(kata, "DATA KEAMANAN RUANGAN.pdf");
+				}catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "Gagal Membuat PDF", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
+		button_1.setIcon(new ImageIcon(InventarisKeamanan.class.getResource("/as/pdf-icon.png")));
+		paneBawah.add(button_1, BorderLayout.WEST);
+		button_1.setForeground(Color.WHITE);
+		button_1.setBackground(new Color(255, 102, 0));
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnNewButton.setForeground(Color.WHITE);
 		btnNewButton.setBackground(new Color(255, 102, 0));
